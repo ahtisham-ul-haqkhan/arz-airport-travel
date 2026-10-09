@@ -4,9 +4,9 @@ import '../styles/animations.css';
 import './globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://arzairporttravel.co.uk'),
+  metadataBase: new URL('https://www.arzairporttravel.co.uk'),
   alternates: {
-    canonical: 'https://arzairporttravel.co.uk',
+    canonical: 'https://www.arzairporttravel.co.uk',
   },
   title: 'Airport Transfers Stoke-on-Trent | ARZ Airport Travel | Wheelchair Accessible Taxi',
   description:
@@ -27,7 +27,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://arzairporttravel.co.uk',
+    url: 'https://www.arzairporttravel.co.uk',
     title: 'Airport Transfers Stoke-on-Trent | ARZ Airport Travel',
     description:
       'Wheelchair accessible private hire taxi & UK airport transfers from Stoke-on-Trent & Staffordshire. Book online or chat on WhatsApp.',
@@ -58,9 +58,9 @@ const jsonLd = {
       legalName: 'ARZ Airport Travel',
       description:
         'Council licensed private hire operator in Stoke-on-Trent & Newcastle-under-Lyme. Fully insured private hire with public liability, wheelchair accessible minibus, and enhanced DBS-checked professional drivers.',
-      image: 'https://arzairporttravel.co.uk/assets/logo/logo.png',
+      image: 'https://www.arzairporttravel.co.uk/assets/logo/logo.png',
       telephone: '+447828533942',
-      url: 'https://arzairporttravel.co.uk',
+      url: 'https://www.arzairporttravel.co.uk',
       priceRange: '££',
       address: {
         '@type': 'PostalAddress',
