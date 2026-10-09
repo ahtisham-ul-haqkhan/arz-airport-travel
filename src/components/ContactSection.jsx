@@ -48,33 +48,36 @@ export default function ContactSection({ onWhatsApp, showToast }) {
       return;
     }
 
+    // Optimistic UI: show success instantly, send in background, restore data if it fails
+    const submitted = { ...formData };
+    showToast('Thank you! Your travel enquiry has been sent successfully.', 'success');
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+
+    try {
+      const stored = JSON.parse(localStorage.getItem('zet_contact_messages') || '[]');
+      stored.push({ ...submitted, date: new Date().toISOString() });
+      localStorage.setItem('zet_contact_messages', JSON.stringify(stored));
+    } catch (_) {}
+
     setIsSubmitting(true);
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submitted),
+        keepalive: true,
       });
-      const result = await res.json();
 
-      if (res.ok) {
-        showToast('Thank you! Your travel enquiry has been sent successfully.', 'success');
-
-        // Store in localStorage
-        try {
-          const stored = JSON.parse(localStorage.getItem('zet_contact_messages') || '[]');
-          stored.push({ ...formData, date: new Date().toISOString() });
-          localStorage.setItem('zet_contact_messages', JSON.stringify(stored));
-        } catch (_) {}
-
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-      } else {
+      if (!res.ok) {
+        const result = await res.json().catch(() => ({}));
+        setFormData(submitted);
         showToast(
-          result.error || 'Failed to send message via SMTP. Please check your .env.local settings.',
+          result.error || 'Message could not be sent. Please try again or message via WhatsApp.',
           'error'
         );
       }
     } catch (err) {
+      setFormData(submitted);
       showToast('Server connection error. Please try again or message via WhatsApp.', 'error');
     } finally {
       setIsSubmitting(false);
@@ -307,7 +310,7 @@ ${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`
                       disabled={isSubmitting}
                       style={{ opacity: isSubmitting ? 0.75 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
                     >
-                      <span>{isSubmitting ? 'Sending Message...' : 'Send Message via Email'}</span>
+                      <span>{isSubmitting ? 'Message Sent ✓' : 'Send Message via Email'}</span>
                       <Send size={16} />
                     </button>
                     <button
