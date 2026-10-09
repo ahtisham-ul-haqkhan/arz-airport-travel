@@ -98,14 +98,6 @@ const jsonLd = {
           availableLanguage: ['English', 'Urdu', 'Hindi'],
         },
       ],
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        bestRating: '5',
-        worstRating: '1',
-        ratingCount: '87',
-        reviewCount: '87',
-      },
       areaServed: [
         'Stoke-on-Trent',
         'Newcastle-under-Lyme',
