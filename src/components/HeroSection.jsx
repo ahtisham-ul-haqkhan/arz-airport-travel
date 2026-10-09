@@ -169,7 +169,7 @@ export default function HeroSection({ onWhatsApp }) {
               </div>
               <img
                 src="/assets/images/car-images/ford-minibus-front.jpeg"
-                alt="ARZ Airport Travel black Ford minibus private hire taxi"
+                alt="ARZ Airport Travel Wheelchair Accessible 8 Seater Minibus Taxi Stoke-on-Trent for Airport Transfers"
                 style={{ height: 380, objectFit: 'cover', objectPosition: 'center 45%' }}
               />
             </div>

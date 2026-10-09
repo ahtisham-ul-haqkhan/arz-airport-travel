@@ -85,26 +85,25 @@ export default function Footer({ onWhatsApp, onOpenPrivacy, onOpenTerms }) {
                 </div>
               </div>
               <p className="footer-brand-desc mb-4">
-                Stoke-on-Trent &amp; Staffordshire&apos;s premier private hire &amp; wheelchair accessible taxi service.
-                Delivering punctual, executive, and fixed-fare airport transfers across all major UK airports 24 hours a
-                day, 7 days a week.
+                Licensed by Stoke-on-Trent City Council &bull; Newcastle-under-Lyme Borough Council.
+                Fully insured private hire vehicle with public liability and enhanced DBS-checked professional chauffeur. Delivering punctual 24/7 airport transfers across the UK.
               </p>
               <div className="footer-trust-badges-grid">
                 <div className="trust-badge-pill">
                   <ShieldCheck className="trust-icon text-success" />
-                  <span>Council Licensed</span>
+                  <span>Stoke Council Licensed</span>
                 </div>
                 <div className="trust-badge-pill">
                   <Accessibility className="trust-icon text-info" />
-                  <span>Wheelchair Access</span>
+                  <span>Wheelchair Ramp &amp; Safety</span>
                 </div>
                 <div className="trust-badge-pill">
                   <Tag className="trust-icon text-warning" />
-                  <span>Fixed Fares</span>
+                  <span>Fully Insured &amp; Liability</span>
                 </div>
                 <div className="trust-badge-pill">
                   <UserCheck className="trust-icon text-primary" />
-                  <span>DBS Checked</span>
+                  <span>Enhanced DBS Checked</span>
                 </div>
               </div>
             </div>
@@ -260,7 +259,7 @@ export default function Footer({ onWhatsApp, onOpenPrivacy, onOpenTerms }) {
         <div className="footer-bottom-advanced">
           <div className="footer-copyright">
             &copy; <span id="currentYear">{year}</span> <strong>ARZ Airport Travel</strong>. All rights reserved. Licensed
-            UK Private Hire Operator.
+            by Stoke-on-Trent City Council Private Hire Operator &bull; Fully Insured with Public Liability.
           </div>
           <div className="footer-bottom-links">
             <button

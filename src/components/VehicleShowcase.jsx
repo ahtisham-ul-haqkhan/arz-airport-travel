@@ -16,17 +16,17 @@ const vehicleImages = [
   {
     id: 1,
     src: '/assets/images/car-images/ford-voyager-side.jpeg',
-    alt: 'Ford Voyager 8-seater minibus side view',
+    alt: 'Wheelchair Accessible 8 Seater Minibus Taxi Stoke-on-Trent for Airport Transfers',
   },
   {
     id: 2,
     src: '/assets/images/car-images/ford-minibus-front.jpeg',
-    alt: 'Black Ford minibus private hire taxi front view',
+    alt: 'Private Hire Ford Minibus Taxi Stoke-on-Trent to Manchester and London Heathrow Airports',
   },
   {
     id: 3,
     src: '/assets/images/car-images/seat-alhambra-mpv.png',
-    alt: 'Grey SEAT Alhambra MPV private hire car',
+    alt: 'Executive Private Hire Car Stoke-on-Trent for Birmingham and East Midlands Airport Travel',
   },
 ];
 
@@ -85,7 +85,7 @@ export default function VehicleShowcase({ onWhatsApp }) {
                       onClick={() => handleThumbClick(img)}
                       aria-label={img.alt}
                     >
-                      <img src={img.src} alt="" />
+                      <img src={img.src} alt={img.alt} />
                     </button>
                   ))}
                 </div>

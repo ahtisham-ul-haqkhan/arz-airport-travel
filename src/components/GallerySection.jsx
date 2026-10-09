@@ -7,27 +7,27 @@ export const fleetPhotos = [
   {
     id: 0,
     src: '/assets/images/car-images/ford-voyager-side.jpeg',
-    alt: '8-Seater Minibus Side View',
+    alt: 'Wheelchair Accessible 8-Seater Minibus Taxi Stoke-on-Trent Side Profile',
   },
   {
     id: 1,
     src: '/assets/images/car-images/ford-minibus-front.jpeg',
-    alt: 'Minibus Front View',
+    alt: 'Executive Black Ford Minibus Airport Taxi Stoke-on-Trent Front View',
   },
   {
     id: 2,
     src: '/assets/images/car-images/seat-alhambra-mpv.png',
-    alt: 'SEAT Alhambra Car',
+    alt: 'Comfort Private Hire Chauffeur Car Stoke-on-Trent and Newcastle-under-Lyme',
   },
   {
     id: 3,
     src: '/assets/images/car-images/WhatsApp Image 2026-10-06 at 11.26.45 PM.jpeg',
-    alt: 'Wheelchair Access Ramp',
+    alt: 'Council Approved Wheelchair Access Ramp and Safety Restraints Stoke-on-Trent',
   },
   {
     id: 4,
     src: '/assets/images/car-images/WhatsApp Image 2026-10-07 at 12.55.59 AM.jpeg',
-    alt: 'Clean Vehicle Interior',
+    alt: 'Spacious 8 Passenger Seating and Luggage Capacity Minibus Interior',
   },
 ];
 

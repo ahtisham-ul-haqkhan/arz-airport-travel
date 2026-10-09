@@ -5,11 +5,14 @@ import './globals.css';
 
 export const metadata = {
   metadataBase: new URL('https://arzairporttravel.co.uk'),
+  alternates: {
+    canonical: 'https://arzairporttravel.co.uk',
+  },
   title: 'Airport Transfers Stoke-on-Trent | ARZ Airport Travel | Wheelchair Accessible Taxi',
   description:
     'Reliable, comfortable and punctual wheelchair accessible airport transfers & private hire taxi across Stoke-on-Trent, Newcastle-under-Lyme, Staffordshire & UK nationwide. Direct transfers to Manchester, Heathrow, Gatwick & Birmingham airports.',
   keywords:
-    'Airport Transfers Stoke-on-Trent, Wheelchair Accessible Taxi Stoke, Manchester Airport Taxi Stoke, Heathrow Airport Transfer Staffordshire, Private Hire Taxi Newcastle-under-Lyme, ARZ Airport Travel',
+    'Airport Transfers Stoke-on-Trent, Wheelchair Accessible Taxi Stoke, Manchester Airport Taxi Stoke, Heathrow Airport Transfer Staffordshire, Private Hire Taxi Newcastle-under-Lyme, ARZ Airport Travel, Stoke to Manchester Airport taxi, 8 seater minibus Stoke-on-Trent',
   authors: [{ name: 'ARZ Airport Travel' }],
   robots: 'index, follow',
   other: {
@@ -33,9 +36,16 @@ export const metadata = {
         url: '/assets/images/car-images/ford-minibus-front.jpeg',
         width: 1200,
         height: 630,
-        alt: 'ARZ Airport Travel Black Ford Minibus Taxi',
+        alt: 'ARZ Airport Travel Wheelchair Accessible 8 Seater Minibus Taxi Stoke-on-Trent',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Airport Transfers Stoke-on-Trent | ARZ Airport Travel',
+    description:
+      'Wheelchair accessible private hire taxi & UK airport transfers from Stoke-on-Trent & Staffordshire. 24/7 fixed fares.',
+    images: ['/assets/images/car-images/ford-minibus-front.jpeg'],
   },
 };
 
@@ -45,6 +55,9 @@ const jsonLd = {
     {
       '@type': 'TaxiService',
       name: 'ARZ Airport Travel',
+      legalName: 'ARZ Airport Travel',
+      description:
+        'Council licensed private hire operator in Stoke-on-Trent & Newcastle-under-Lyme. Fully insured private hire with public liability, wheelchair accessible minibus, and enhanced DBS-checked professional drivers.',
       image: 'https://arzairporttravel.co.uk/assets/logo/logo.png',
       telephone: '+447828533942',
       url: 'https://arzairporttravel.co.uk',
@@ -60,10 +73,50 @@ const jsonLd = {
         latitude: 53.0027,
         longitude: -2.1794,
       },
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday',
+          ],
+          opens: '00:00',
+          closes: '23:59',
+        },
+      ],
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+447828533942',
+          contactType: 'customer service',
+          areaServed: 'GB',
+          availableLanguage: ['English', 'Urdu', 'Hindi'],
+        },
+      ],
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        bestRating: '5',
+        worstRating: '1',
+        ratingCount: '87',
+        reviewCount: '87',
+      },
       areaServed: [
         'Stoke-on-Trent',
         'Newcastle-under-Lyme',
         'Staffordshire',
+        'Hanley',
+        'Trentham',
+        'Longton',
+        'Fenton',
+        'Burslem',
+        'Tunstall',
+        'Keele',
         'Manchester Airport (MAN)',
         'Heathrow Airport (LHR)',
         'Birmingham Airport (BHX)',
@@ -75,6 +128,7 @@ const jsonLd = {
         'Airport Transfers',
         'Wheelchair Accessible Taxi',
         'Private Hire Taxi',
+        '8 Seater Minibus Hire',
         'Long Distance UK Taxi',
       ],
       hasOfferCatalog: {
