@@ -26,7 +26,7 @@ const faqs = [
     id: 4,
     question: 'What is the passenger and luggage capacity?',
     answer:
-      'Our vehicle comfortably accommodates passengers and standard-sized suitcases in the boot.',
+      'Our vehicle comfortably accommodates up to 8 passengers and up to 11 standard suitcases in the luggage area.',
   },
   {
     id: 5,

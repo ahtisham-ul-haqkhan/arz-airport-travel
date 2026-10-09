@@ -860,8 +860,14 @@ img {
   justify-content: center;
 }
 
-.counter-btn-light:hover {
+.counter-btn-light:hover:not(:disabled) {
   background: var(--blue-light);
+}
+
+.counter-btn-light:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .counter-value-light {

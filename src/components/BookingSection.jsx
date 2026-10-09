@@ -95,11 +95,11 @@ export default function BookingSection({
   };
 
   const changePassengers = (delta) => {
-    setPassengers((prev) => Math.max(1, Math.min(4, prev + delta)));
+    setPassengers((prev) => Math.max(1, Math.min(8, prev + delta)));
   };
 
   const changeLuggage = (delta) => {
-    setLuggage((prev) => Math.max(0, Math.min(3, prev + delta)));
+    setLuggage((prev) => Math.max(0, Math.min(11, prev + delta)));
   };
 
   const handleSubmit = (e) => {
@@ -209,7 +209,7 @@ export default function BookingSection({
               <div>
                 <div className="fw-bold text-main small">Wheelchair Accessible Private Hire Vehicle</div>
                 <div className="text-muted" style={{ fontSize: '0.8rem' }}>
-                  Direct owner-chauffeur service &bull; Up to 4 Passengers &bull; 2-3 Suitcases
+                  Direct owner-chauffeur service &bull; Up to 8 Passengers &bull; 11 Suitcases
                 </div>
               </div>
             </div>
@@ -433,13 +433,14 @@ export default function BookingSection({
               {/* Passengers & Luggage Counters */}
               <div className="col-sm-6 col-lg-3">
                 <label className="form-label-light">
-                  <span>Passengers (Max 4)</span>
+                  <span>Passengers (Max 8)</span>
                 </label>
                 <div className="counter-box-light">
                   <button
                     type="button"
                     className="counter-btn-light"
                     onClick={() => changePassengers(-1)}
+                    disabled={passengers <= 1}
                     aria-label="Decrease passenger count"
                   >
                     -
@@ -451,6 +452,7 @@ export default function BookingSection({
                     type="button"
                     className="counter-btn-light"
                     onClick={() => changePassengers(1)}
+                    disabled={passengers >= 8}
                     aria-label="Increase passenger count"
                   >
                     +
@@ -460,13 +462,14 @@ export default function BookingSection({
 
               <div className="col-sm-6 col-lg-3">
                 <label className="form-label-light">
-                  <span>Luggage Bags (Max 3)</span>
+                  <span>Luggage Bags (Max 11)</span>
                 </label>
                 <div className="counter-box-light">
                   <button
                     type="button"
                     className="counter-btn-light"
                     onClick={() => changeLuggage(-1)}
+                    disabled={luggage <= 0}
                     aria-label="Decrease luggage count"
                   >
                     -
@@ -478,6 +481,7 @@ export default function BookingSection({
                     type="button"
                     className="counter-btn-light"
                     onClick={() => changeLuggage(1)}
+                    disabled={luggage >= 11}
                     aria-label="Increase luggage count"
                   >
                     +

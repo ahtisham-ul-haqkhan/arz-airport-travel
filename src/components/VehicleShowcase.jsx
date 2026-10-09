@@ -9,6 +9,7 @@ import {
   Accessibility,
   ArrowRight,
   MessageCircle,
+  Luggage,
 } from 'lucide-react';
 
 const vehicleImages = [
@@ -102,11 +103,11 @@ export default function VehicleShowcase({ onWhatsApp }) {
               <div className="d-flex flex-wrap gap-2 mb-4">
                 <span className="vehicle-feature-pill">
                   <Users size={16} style={{ color: 'var(--blue-primary)' }} />
-                  <span>Up to 4 Passengers</span>
+                  <span>Up to 8 Passengers</span>
                 </span>
                 <span className="vehicle-feature-pill">
-                  <Users size={16} style={{ color: 'var(--blue-primary)' }} />
-                  <span>Up to 8 Passengers</span>
+                  <Luggage size={16} style={{ color: 'var(--blue-primary)' }} />
+                  <span>Up to 11 Suitcases</span>
                 </span>
                 <span className="vehicle-feature-pill">
                   <Zap size={16} style={{ color: 'var(--blue-primary)' }} />

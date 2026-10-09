@@ -158,7 +158,7 @@ const jsonLd = {
           name: 'What is the passenger and luggage capacity?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Our vehicle comfortably accommodates passengers and standard-sized suitcases in the boot.',
+            text: 'Our vehicle comfortably accommodates up to 8 passengers and up to 11 standard suitcases in the luggage area.',
           },
         },
         {
