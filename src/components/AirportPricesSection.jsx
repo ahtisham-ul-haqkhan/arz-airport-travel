@@ -256,7 +256,7 @@ export default function AirportPricesSection({ onSelectAirport, onWhatsApp }) {
                   <Luggage size={20} />
                 </div>
                 <div>
-                  <div className="fw-bold text-main small">3 Suitcases</div>
+                  <div className="fw-bold text-main small">11 Suitcases</div>
                   <div className="text-muted" style={{ fontSize: '0.78rem' }}>
                     Generous boot space
                   </div>
