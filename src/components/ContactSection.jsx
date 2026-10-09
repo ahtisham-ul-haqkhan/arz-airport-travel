@@ -22,6 +22,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
     subject: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +33,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
     }
   };
 
-  const handleSubmitEmail = (e) => {
+  const handleSubmitEmail = async (e) => {
     e.preventDefault();
     const { name, email, phone, subject, message } = formData;
 
@@ -47,55 +48,37 @@ export default function ContactSection({ onWhatsApp, showToast }) {
       return;
     }
 
-    const targetEmail = CONFIG.email || 'zafarirshad97@gmail.com';
-    const emailSubject = `Travel Enquiry from ${name.trim()} - ${subject.trim() || 'ARZ Airport Travel'}`;
-    const emailBody = `Hello ARZ Airport Travel,
-
-You have received a new travel enquiry:
-- Full Name: ${name.trim()}
-- Email: ${email.trim()}
-- Phone Number: ${phone.trim() || 'Not provided'}
-- Subject: ${subject.trim() || 'General Enquiry'}
-
-Message:
-${message.trim()}
-
-----------------------------------------
-Sent from ARZ Airport Travel Contact Form`;
-
-    const mailtoLink = `mailto:${targetEmail}?subject=${encodeURIComponent(
-      emailSubject
-    )}&body=${encodeURIComponent(emailBody)}`;
-
-    // Background silent post
+    setIsSubmitting(true);
     try {
-      fetch(`https://formsubmit.co/ajax/${encodeURIComponent(targetEmail)}`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          'Full Name': name.trim(),
-          'Customer Email': email.trim(),
-          'Phone Number': phone.trim() || 'Not provided',
-          Subject: subject.trim() || 'Website Enquiry',
-          Message: message.trim(),
-          _subject: emailSubject,
-          _replyto: email.trim(),
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      }).catch(() => {});
-    } catch (_) {}
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await res.json();
 
-    // Store in localStorage
-    try {
-      const stored = JSON.parse(localStorage.getItem('zet_contact_messages') || '[]');
-      stored.push({ ...formData, date: new Date().toISOString() });
-      localStorage.setItem('zet_contact_messages', JSON.stringify(stored));
-    } catch (_) {}
+      if (res.ok) {
+        showToast('Thank you! Your travel enquiry has been sent successfully.', 'success');
 
-    showToast(`Opening your email client to send directly to ${targetEmail}...`, 'success');
-    window.location.href = mailtoLink;
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        // Store in localStorage
+        try {
+          const stored = JSON.parse(localStorage.getItem('zet_contact_messages') || '[]');
+          stored.push({ ...formData, date: new Date().toISOString() });
+          localStorage.setItem('zet_contact_messages', JSON.stringify(stored));
+        } catch (_) {}
+
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        showToast(
+          result.error || 'Failed to send message via SMTP. Please check your .env.local settings.',
+          'error'
+        );
+      }
+    } catch (err) {
+      showToast('Server connection error. Please try again or message via WhatsApp.', 'error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleSendWhatsApp = () => {
@@ -317,8 +300,14 @@ ${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`
                   </div>
 
                   <div className="col-12 d-flex flex-wrap gap-2 pt-2">
-                    <button type="submit" className="btn-primary-blue flex-grow-1" id="btnContactEmail">
-                      <span>Send Message via Email</span>
+                    <button
+                      type="submit"
+                      className="btn-primary-blue flex-grow-1"
+                      id="btnContactEmail"
+                      disabled={isSubmitting}
+                      style={{ opacity: isSubmitting ? 0.75 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
+                    >
+                      <span>{isSubmitting ? 'Sending Message...' : 'Send Message via Email'}</span>
                       <Send size={16} />
                     </button>
                     <button
