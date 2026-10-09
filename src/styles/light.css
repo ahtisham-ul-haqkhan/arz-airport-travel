@@ -1,0 +1,3687 @@
+/* ==========================================================================
+   ZAFAR EXECUTIVE TRAVEL - MODERN LIGHT THEME DESIGN SYSTEM
+   Palette: Crisp White, Slate Grey, Royal Sapphire Blue & Fresh Emerald Green
+   Specifically tailored for single owner-operated executive taxi & private hire
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Light & Pristine */
+  --bg-main: #FFFFFF;
+  --bg-alt: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  --bg-input: #FFFFFF;
+
+  /* Primary Blue Accent (No gold, No dark navy) */
+  --blue-primary: #1D4ED8;
+  --blue-hover: #1E40AF;
+  --blue-light: #EFF6FF;
+  --blue-border: #BFDBFE;
+  --blue-gradient: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  --blue-gradient-hover: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+  --blue-glow: rgba(37, 99, 235, 0.2);
+
+  /* WhatsApp Green */
+  --wa-green: #25D366;
+  --wa-dark: #075E54;
+  --wa-teal: #128C7E;
+
+  /* Typography & Neutrals */
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  --border-light: #E2E8F0;
+  --border-focus: #3B82F6;
+
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 25px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+  --shadow-blue: 0 8px 24px rgba(37, 99, 235, 0.25);
+
+  /* Typography */
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Base Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--blue-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--blue-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Section Header Component */
+.section-badge-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--blue-light);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-pill);
+  color: var(--blue-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.section-title-light {
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+
+.section-subtitle-light {
+  color: var(--text-muted);
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.text-blue-accent {
+  color: var(--blue-primary) !important;
+}
+
+/* ==========================================================================
+   BUTTONS (LUXURY ENHANCED)
+   ========================================================================== */
+.btn-primary-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--blue-gradient);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: var(--shadow-blue);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-blue:hover {
+  background: var(--blue-gradient-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.42);
+  color: #FFFFFF !important;
+}
+
+.btn-outline-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #FFFFFF;
+  color: var(--blue-primary) !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 11px 24px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--blue-primary);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}
+
+.btn-outline-blue:hover {
+  background: var(--blue-light);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.2);
+  color: var(--blue-hover) !important;
+  border-color: var(--blue-hover);
+}
+
+.btn-whatsapp-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-whatsapp-light:hover {
+  background: linear-gradient(135deg, #20ba5a 0%, #0e7266 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   BOLD HERO ENHANCEMENTS
+   ========================================================================== */
+.hero-badge-bold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1.5px solid #93C5FD;
+  border-radius: var(--radius-pill);
+  color: #1D4ED8;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+}
+
+.text-blue-accent-gradient {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.hero-title-bold {
+  font-family: var(--font-heading);
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+  color: #0F172A;
+  line-height: 1.12;
+}
+
+.hero-subtitle-bold {
+  color: #334155 !important;
+  font-weight: 600 !important;
+  line-height: 1.6;
+}
+
+.btn-primary-blue-bold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary-blue-bold:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.45);
+  color: #FFFFFF !important;
+}
+
+.btn-whatsapp-bold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.02rem;
+  padding: 14px 26px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-whatsapp-bold:hover {
+  background: linear-gradient(135deg, #22bf5b 0%, #0e7266 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.55);
+  color: #FFFFFF !important;
+}
+
+.hero-feature-card-bold {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.hero-feature-card-bold:hover {
+  border-color: #BFDBFE;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+}
+
+.feature-icon-wrapper-bold {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-car-card-bold {
+  border: 2px solid #E2E8F0;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  border-radius: 24px;
+}
+
+.hero-status-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pulse-dot-green {
+  width: 8px;
+  height: 8px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  animation: pulse-green-glow 2s infinite;
+}
+
+@keyframes pulse-green-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.hero-floating-badge-bold {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1.5px solid #E2E8F0 !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15) !important;
+}
+
+/* ==========================================================================
+   NAVIGATION & HEADER (LIGHT)
+   ========================================================================== */
+/* ==========================================================================
+   NAVIGATION & HEADER SYSTEM (LIGHT & EXECUTIVE)
+   ========================================================================== */
+.site-header-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1020;
+  background: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  transition: all var(--transition-normal);
+}
+
+/* Sleek Top Contact Bar (Dark Accent) */
+.header-top-bar {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: #F8FAFC;
+  font-size: 0.82rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-contact-link {
+  color: #E2E8F0;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.top-contact-link:hover {
+  color: #60A5FA;
+}
+
+.top-icon {
+  width: 14px;
+  height: 14px;
+  color: #3B82F6;
+  flex-shrink: 0;
+}
+
+.top-bar-divider {
+  color: #475569;
+  font-size: 0.75rem;
+}
+
+.top-bar-info {
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.badge-247 {
+  color: #4ADE80;
+  font-weight: 700;
+}
+
+/* Main Navigation Bar */
+.header-main-nav {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Header Logo Image */
+.header-logo-img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #1D4ED8;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.18);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.drawer-logo-img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #1D4ED8;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.18);
+}
+
+.brand-crest-light {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--blue-light);
+  border: 1.5px solid var(--blue-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-primary);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.brand-main-name-light {
+  font-family: 'Outfit', 'Syne', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.0;
+  display: block;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-sub-name-light {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1D4ED8;
+  font-weight: 800;
+  display: block;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* Mobile Drawer Contact Card */
+.drawer-contact-info-card {
+  background: #F8FAFC;
+  border: 1px solid var(--blue-border);
+}
+
+.site-footer-advanced .brand-main-name-light {
+  background: linear-gradient(135deg, #FFFFFF 0%, #93C5FD 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.site-footer-advanced .brand-sub-name-light {
+  color: #60A5FA !important;
+  background: none !important;
+  -webkit-text-fill-color: #60A5FA !important;
+}
+
+.nav-link-light {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  white-space: nowrap;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.nav-link-light::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--blue-primary);
+  transition: all var(--transition-fast);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-link-light:hover,
+.nav-link-light.active {
+  color: var(--blue-primary);
+}
+
+.nav-link-light:hover::after,
+.nav-link-light.active::after {
+  width: 24px;
+}
+
+.header-phone-pill-light {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.header-phone-pill-light:hover {
+  background: var(--blue-light);
+  border-color: var(--blue-border);
+  color: var(--blue-primary);
+}
+
+/* ==========================================================================
+   MOBILE DRAWER & OVERLAY (CRITICAL: HIDDEN BY DEFAULT!)
+   ========================================================================== */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  max-width: 85vw;
+  height: 100vh;
+  background: #FFFFFF;
+  z-index: 1050;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 1px solid var(--border-light);
+  overflow-y: auto;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1040;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-drawer-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   HERO SECTION (LIGHT)
+   ========================================================================== */
+.hero-section-light {
+  position: relative;
+  min-height: 85vh;
+  padding-top: 130px;
+  padding-bottom: 70px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 50%, #EFF6FF 100%);
+  overflow: hidden;
+}
+
+.hero-light-car-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+}
+
+.hero-light-car-card img {
+  width: 100%;
+  height: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hero-light-car-card:hover img {
+  transform: scale(1.03);
+}
+
+.hero-floating-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   BOOKING FORM SECTION (LIGHT)
+   ========================================================================== */
+.booking-section-light {
+  padding: 80px 0;
+  background-color: var(--bg-alt);
+}
+
+.booking-card-light {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 40px;
+  position: relative;
+}
+
+.booking-type-toggle-light {
+  display: inline-flex;
+  background: var(--bg-subtle);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-light);
+}
+
+.booking-type-btn-light {
+  background: transparent;
+  border: none;
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.booking-type-btn-light.active {
+  background: var(--blue-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-xs);
+}
+
+.form-label-light {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-control-light,
+.form-select-light {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  padding: 12px 14px;
+  font-size: 0.94rem;
+  font-family: var(--font-body);
+  transition: all var(--transition-fast);
+}
+
+.input-icon-left-light~.form-control-light,
+.input-icon-left-light~.form-select-light,
+.has-icon .form-control-light,
+.has-icon .form-select-light {
+  padding-left: 42px;
+}
+
+.form-control-light:focus,
+.form-select-light:focus {
+  background-color: #FFFFFF;
+  border-color: var(--blue-primary);
+  box-shadow: 0 0 0 3px var(--blue-glow);
+  outline: none;
+}
+
+.form-control-light::placeholder {
+  color: #94A3B8;
+  font-size: 0.9rem;
+}
+
+.input-icon-left-light {
+  position: absolute;
+  left: 14px;
+  color: var(--blue-primary);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+/* Return Trip Row */
+.return-trip-row {
+  display: none;
+  animation: fadeInDown 0.3s ease forwards;
+}
+
+.return-trip-row.active {
+  display: flex;
+}
+
+/* Airport quick picks */
+.airport-chip-light {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.airport-chip-light:hover {
+  background: var(--blue-light);
+  border-color: var(--blue-border);
+  color: var(--blue-primary);
+}
+
+/* Counters */
+.counter-box-light {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 48px;
+}
+
+.counter-btn-light {
+  width: 44px;
+  height: 100%;
+  background: var(--bg-subtle);
+  border: none;
+  color: var(--blue-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-btn-light:hover {
+  background: var(--blue-light);
+}
+
+.counter-value-light {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+/* Single Taxi Vehicle Banner */
+.single-vehicle-banner {
+  background: var(--blue-light);
+  border: 1.5px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   THE VEHICLE (YOUR RIDE SHOWCASE)
+   ========================================================================== */
+.vehicle-showcase-section {
+  padding: 90px 0;
+  background-color: #FFFFFF;
+}
+
+.vehicle-detail-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.vehicle-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-main);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Vehicle photo gallery */
+.vehicle-gallery-main {
+  aspect-ratio: 4 / 3;
+  background: #FFFFFF;
+}
+
+.vehicle-gallery .vehicle-gallery-main img {
+  width: 100%;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover;
+  object-position: center 60%;
+  transition: opacity 0.18s ease;
+}
+
+.vehicle-gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.vehicle-thumb {
+  padding: 0;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #FFFFFF;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all var(--transition-fast);
+}
+
+.vehicle-gallery .vehicle-thumb img {
+  width: 100%;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover;
+}
+
+.vehicle-thumb:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.vehicle-thumb.active {
+  opacity: 1;
+  border-color: var(--blue-primary);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================================================================
+   AIRPORT TRANSFERS (LIGHT)
+   ========================================================================== */
+.airports-section-light {
+  padding: 90px 0;
+  background-color: var(--bg-alt);
+}
+
+.airport-card-light {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.airport-card-light:hover {
+  border-color: var(--blue-border);
+  background: var(--blue-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.airport-code-badge-light {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--blue-light);
+  border: 1.5px solid var(--blue-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-primary);
+  font-weight: 800;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   WHY CHOOSE US & HOW IT WORKS (LIGHT)
+   ========================================================================== */
+.why-section-light {
+  padding: 90px 0;
+  background: #FFFFFF;
+}
+
+.why-card-light {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  height: 100%;
+  transition: all var(--transition-fast);
+}
+
+.why-card-light:hover {
+  border-color: var(--blue-border);
+  background: #FFFFFF;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.why-icon-light {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background: var(--blue-light);
+  border: 1px solid var(--blue-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-primary);
+  margin-bottom: 20px;
+}
+
+.how-step-card-light {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  position: relative;
+  height: 100%;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
+}
+
+.how-step-card-light:hover {
+  border-color: var(--blue-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.how-step-number-light {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--blue-light);
+  line-height: 1;
+}
+
+/* ==========================================================================
+   TESTIMONIALS & FAQ (LIGHT)
+   ========================================================================== */
+.testimonials-section-light {
+  padding: 90px 0;
+  background-color: var(--bg-alt);
+}
+
+.testimonial-card-light {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 42px 48px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.faq-section-light {
+  padding: 90px 0;
+  background-color: #FFFFFF;
+}
+
+.faq-item-light {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 12px;
+  transition: all var(--transition-fast);
+}
+
+.faq-item-light.active {
+  border-color: var(--blue-primary);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+}
+
+.faq-header-light {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-item-light.active .faq-header-light {
+  background: var(--blue-light);
+}
+
+.faq-header-light i,
+.faq-header-light svg {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faq-item-light.active .faq-header-light i,
+.faq-item-light.active .faq-header-light svg {
+  transform: rotate(180deg);
+}
+
+.faq-body-light {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 24px;
+}
+
+.faq-item-light.active .faq-body-light {
+  max-height: 300px;
+  padding: 16px 24px 22px 24px;
+}
+
+/* ==========================================================================
+   CONTACT SECTION (LIGHT)
+   ========================================================================== */
+.contact-section-light {
+  padding: 90px 0;
+  background-color: var(--bg-alt);
+}
+
+.contact-card-light {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+/* ==========================================================================
+   FOOTER (LIGHT/SLATE)
+   ========================================================================== */
+/* ==========================================================================
+   ULTRA ADVANCED GRADIENT & BACKGROUND-IMAGE LUXURY FOOTER
+   ========================================================================== */
+.site-footer-light,
+.site-footer-advanced {
+  position: relative;
+  background: linear-gradient(180deg, #0F172A 0%, #030712 100%);
+  color: #E2E8F0;
+  padding: 80px 0 35px;
+  font-size: 0.95rem;
+  overflow: hidden;
+  border-top: 3px solid #2563EB;
+  box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.footer-vip-cta-banner {
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 20px;
+  padding: 26px 32px;
+  margin-bottom: 45px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-vip-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #2563EB;
+}
+
+.footer-live-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #34D399;
+  letter-spacing: 0.02em;
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: livePulse 2s infinite;
+  display: inline-block;
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.footer-vip-cta-text h3 {
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.footer-vip-cta-text p {
+  color: #94A3B8;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.footer-vip-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-footer-call {
+  background: #FFFFFF !important;
+  color: #1E40AF !important;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1px solid #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-footer-call:hover {
+  background: #F1F5F9 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.25);
+}
+
+.btn-footer-whatsapp {
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1px solid #25D366;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-footer-whatsapp:hover {
+  background: #20bd5a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+}
+
+.btn-footer-book {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1px solid #2563EB;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-footer-book:hover {
+  background: #1d4ed8 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+}
+
+.footer-glass-card-advanced {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 30px 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-glass-card-advanced::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2563EB;
+  opacity: 0.9;
+}
+
+.footer-glass-card-advanced:hover {
+  border-color: rgba(59, 130, 246, 0.35);
+  background: rgba(15, 23, 42, 0.95);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.footer-logo-ring {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  padding: 2px;
+  background: #2563EB;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.35);
+  flex-shrink: 0;
+}
+
+.footer-brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+}
+
+.footer-trust-badges-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.trust-badge-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #E2E8F0;
+  transition: all 0.25s ease;
+}
+
+.trust-badge-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.trust-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.footer-glass-card-advanced h4 {
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-heading-icon {
+  width: 20px;
+  height: 20px;
+  color: #60A5FA;
+}
+
+.footer-link-pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-link-pill-list a {
+  color: #CBD5E1;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.88rem;
+}
+
+.footer-link-pill-list a i {
+  width: 14px;
+  height: 14px;
+  color: #60A5FA;
+  transition: transform 0.25s ease;
+}
+
+.footer-link-pill-list a:hover {
+  color: #FFFFFF;
+  background: rgba(37, 99, 235, 0.28);
+  border-color: rgba(96, 165, 250, 0.5);
+  transform: translateX(6px);
+}
+
+.footer-link-pill-list a:hover i {
+  transform: translateX(3px);
+}
+
+.footer-airport-pills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.airport-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 10px;
+  color: #E2E8F0;
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.airport-pill:hover {
+  background: rgba(37, 99, 235, 0.25);
+  border-color: #60A5FA;
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+.airport-icon {
+  width: 16px;
+  height: 16px;
+  color: #60A5FA;
+  flex-shrink: 0;
+}
+
+.footer-info-item-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.footer-info-item-box:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.footer-info-label {
+  font-size: 0.72rem;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.footer-info-val {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.footer-payments-block {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 16px;
+}
+
+.footer-payments-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #94A3B8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-payment-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pay-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #CBD5E1;
+}
+
+.pay-badge i {
+  width: 12px;
+  height: 12px;
+  color: #60A5FA;
+}
+
+.footer-bottom-advanced {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.88rem;
+  color: #94A3B8;
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-links a {
+  color: #CBD5E1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.dot-sep {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-footer-scroll-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 7px 18px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-footer-scroll-top:hover {
+  background: rgba(37, 99, 235, 0.4);
+  border-color: #60A5FA;
+  transform: translateY(-2px);
+  color: #FFFFFF !important;
+}
+
+.back-to-top-bold {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.5);
+}
+
+.back-to-top-bold.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-bold:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.7);
+  background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP CHAT WIDGET (CRITICAL: PROPER POSITIONING & HIDDEN BY DEFAULT)
+   ========================================================================== */
+.wa-widget-container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+}
+
+.wa-trigger-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.wa-trigger-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+}
+
+.wa-trigger-btn::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.6);
+  animation: waPulse 2s infinite ease-out;
+}
+
+@keyframes waPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.wa-chat-window {
+  position: absolute;
+  bottom: 74px;
+  right: 0;
+  width: 360px;
+  max-width: calc(100vw - 36px);
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+  display: none;
+  /* HIDDEN UNTIL .open */
+  flex-direction: column;
+  overflow: hidden;
+  animation: popupSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.wa-chat-window.open {
+  display: flex !important;
+  /* SHOWN ONLY WHEN OPENED */
+}
+
+@keyframes popupSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.wa-header {
+  background: linear-gradient(135deg, #075E54 0%, #128C7E 100%);
+  padding: 16px 18px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wa-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wa-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #075E54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.wa-header-info h6 {
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.wa-status-text {
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wa-status-indicator {
+  width: 7px;
+  height: 7px;
+  background: #25D366;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.wa-close-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.wa-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.wa-chat-body {
+  padding: 18px;
+  background-color: #F8FAFC;
+  min-height: 200px;
+  max-height: 320px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wa-msg-bubble {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 12px 12px 12px 2px;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  max-width: 90%;
+  box-shadow: var(--shadow-xs);
+}
+
+.wa-msg-time {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.wa-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.wa-chip {
+  background: #EFF6FF;
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--blue-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.wa-chip:hover {
+  background: var(--blue-primary);
+  color: #FFFFFF;
+  border-color: var(--blue-primary);
+}
+
+.wa-chat-footer {
+  padding: 12px 14px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-input {
+  flex: 1;
+  background: #F1F5F9;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 9px 16px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  outline: none;
+}
+
+.wa-input:focus {
+  border-color: #25D366;
+  background: #FFFFFF;
+}
+
+.wa-send-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #25D366;
+  border: none;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.wa-send-btn:hover {
+  background: #20ba5a;
+}
+
+/* ==========================================================================
+   BACK TO TOP & TOASTS
+   ========================================================================== */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  color: var(--blue-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  z-index: 990;
+  box-shadow: var(--shadow-sm);
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-btn:hover {
+  background: var(--blue-primary);
+  color: #FFFFFF;
+  border-color: var(--blue-primary);
+}
+
+.toast-container-custom {
+  position: fixed;
+  top: 90px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast-custom {
+  background: #FFFFFF;
+  border: 1.5px solid var(--blue-border);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 300px;
+  animation: toastSlideIn 0.3s ease;
+}
+
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   MOBILE STICKY CTA (LIGHT)
+   ========================================================================== */
+.mobile-sticky-cta-light {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-light);
+  padding: 10px 16px;
+  z-index: 900;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 991.98px) {
+
+  .desktop-nav-menu,
+  .header-actions-desktop {
+    display: none !important;
+  }
+
+  .mobile-sticky-cta-light {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .booking-card-light {
+    padding: 24px 20px;
+  }
+
+  .wa-widget-container {
+    bottom: 74px;
+    /* Clearance above mobile sticky bar */
+    right: 18px;
+  }
+}
+
+/* ==========================================================================
+   ULTRA-LUXURIOUS VIP AIRPORT TRANSFER PRICES SECTION
+   ========================================================================== */
+.airport-prices-section {
+  padding: 95px 0 85px;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(37, 211, 102, 0.07) 0%, transparent 45%),
+    linear-gradient(180deg, #F0F6FF 0%, #FFFFFF 50%, #F8FAFC 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.airport-price-card-vip {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 18px 16px 16px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* Top accent line */
+.airport-price-card-vip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #2563EB 0%, #25D366 100%);
+  opacity: 0.85;
+  z-index: 3;
+  transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animated sliding background overlay (Slides in smoothly on hover & click) */
+.airport-price-card-vip::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.85) 0%, rgba(219, 234, 254, 0.95) 50%, rgba(239, 246, 255, 0.85) 100%);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Hover & Click Active States */
+.airport-price-card-vip:hover,
+.airport-price-card-vip:focus-within,
+.airport-price-card-vip.card-active {
+  transform: translateY(-6px) scale(1.015);
+  border-color: #2563EB;
+  box-shadow: 0 16px 38px rgba(37, 99, 235, 0.18);
+}
+
+.airport-price-card-vip:hover::before,
+.airport-price-card-vip.card-active::before {
+  height: 5px;
+  opacity: 1;
+}
+
+.airport-price-card-vip:hover::after,
+.airport-price-card-vip:active::after,
+.airport-price-card-vip.card-active::after {
+  transform: translateX(100%);
+}
+
+/* Inner elements raised above background slide */
+.airport-price-card-vip>div,
+.airport-price-card-vip>ul {
+  position: relative;
+  z-index: 2;
+}
+
+.airport-price-card-vip:hover .airport-price-hero-box,
+.airport-price-card-vip.card-active .airport-price-hero-box {
+  background: #FFFFFF;
+  border-color: #93C5FD;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.airport-price-card-vip:hover .airport-price-number,
+.airport-price-card-vip.card-active .airport-price-number {
+  color: #1D4ED8;
+  transform: scale(1.04);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.airport-card-header-vip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.airport-iata-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: #1D4ED8;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.74rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+}
+
+.airport-fixed-badge {
+  display: none;
+}
+
+.airport-name-title-vip {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.08rem;
+  color: #0F172A;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+.airport-price-hero-box {
+  background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.airport-price-number {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 1.85rem;
+  color: #2563EB;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.airport-price-sublabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.airport-card-features-list {
+  list-style: none;
+  padding: 8px 10px;
+  margin: 0 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+}
+
+.airport-card-features-list li {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  line-height: 1.25;
+}
+
+.airport-card-features-list li.feat-highlight {
+  color: #0F172A;
+  font-weight: 700;
+  padding-bottom: 5px;
+  margin-bottom: 2px;
+  border-bottom: 1px dashed #CBD5E1;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.airport-card-features-list li i,
+.airport-card-features-list li svg {
+  color: #16A34A;
+  flex-shrink: 0;
+  width: 13px !important;
+  height: 13px !important;
+}
+
+.airport-card-features-list .fare-label {
+  color: #64748B;
+  font-weight: 600;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.airport-card-features-list .fare-price {
+  color: #1D4ED8;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.airport-card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.btn-airport-book {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.25);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-airport-book:hover {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-airport-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #DCFCE7;
+  color: #166534 !important;
+  border: 1px solid #86EFAC;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btn-airport-wa:hover {
+  background: #25D366;
+  color: #FFFFFF !important;
+  border-color: #25D366;
+  transform: translateY(-2px);
+}
+
+.airport-trust-ribbon {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-top: 30px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+}
+
+/* ==========================================================================
+   COMPLETE MOBILE & TABLET RESPONSIVE TUNING
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TABLET & DESKTOP SM (max-width: 991.98px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+
+  /* Header & Navigation */
+  .desktop-nav-menu,
+  .header-actions-desktop {
+    display: none !important;
+  }
+
+  .site-header-wrapper {
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+  }
+
+  /* Section Padding */
+  .hero-section-light {
+    padding-top: 130px !important;
+    padding-bottom: 50px;
+    min-height: auto;
+  }
+
+  .booking-section-light,
+  .vehicle-showcase-section,
+  .airports-section-light,
+  .why-section-light,
+  .testimonials-section-light,
+  .contact-section-light,
+  .faq-section-light,
+  .airport-prices-section {
+    padding: 60px 0;
+  }
+
+  /* Section Titles & Badges */
+  .hero-title-bold {
+    font-size: clamp(2rem, 4.5vw, 2.75rem) !important;
+  }
+
+  .section-title-light {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem) !important;
+  }
+
+  .section-subtitle-light {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons on Tablet (Compact & Balanced) */
+  .btn-primary-blue-bold,
+  .btn-whatsapp-bold {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .btn-primary-blue,
+  .btn-outline-blue,
+  .btn-whatsapp-light {
+    padding: 9px 18px !important;
+    font-size: 0.88rem !important;
+  }
+
+  /* Mobile Sticky Bottom Bar */
+  .mobile-sticky-cta-light {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .mobile-sticky-cta-light .btn-primary-blue {
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Booking Card */
+  .booking-card-light {
+    padding: 24px 20px;
+  }
+
+  /* Floating Widgets Clearance */
+  .wa-widget-container {
+    bottom: 68px;
+    right: 18px;
+  }
+
+  .back-to-top-bold {
+    bottom: 68px;
+    left: 18px;
+  }
+
+  /* Footer */
+  .site-footer-advanced {
+    padding: 60px 0 30px;
+  }
+
+  .footer-vip-cta-banner {
+    padding: 20px 22px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE DEVICES (max-width: 767.98px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+
+  /* Section Padding */
+  .hero-section-light {
+    padding-top: 95px;
+    padding-bottom: 35px;
+  }
+
+  .booking-section-light,
+  .vehicle-showcase-section,
+  .airports-section-light,
+  .why-section-light,
+  .testimonials-section-light,
+  .contact-section-light,
+  .faq-section-light,
+  .airport-prices-section {
+    padding: 45px 0;
+  }
+
+  /* Badges & Section Headers */
+  .hero-badge-bold {
+    font-size: 0.74rem;
+    padding: 5px 12px;
+    margin-bottom: 12px;
+  }
+
+  .hero-title-bold {
+    font-size: clamp(1.8rem, 6.2vw, 2.3rem) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-subtitle-bold {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .section-badge-light {
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+
+  .section-title-light {
+    font-size: 1.45rem !important;
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle-light {
+    font-size: 0.88rem !important;
+  }
+
+  /* MOBILE BUTTONS (FULL WIDTH, ULTRA-CLEAN & SINGLE LINE) */
+  .btn-primary-blue-bold,
+  .btn-whatsapp-bold,
+  .btn-primary-blue,
+  .btn-outline-blue,
+  .btn-whatsapp-light {
+    width: 100% !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    padding: 11px 18px !important;
+    font-size: 0.9rem !important;
+    border-radius: 9999px !important;
+  }
+
+  .btn-primary-blue-bold i,
+  .btn-whatsapp-bold svg,
+  .btn-primary-blue i,
+  .btn-outline-blue i,
+  .btn-whatsapp-light i {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .hero-section-light .d-flex.flex-wrap {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  /* Vehicle Detail Card Mobile Stacked Buttons */
+  .vehicle-detail-card .d-flex.align-items-center.gap-3 {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  /* Hero Feature Cards */
+  .hero-feature-card-bold {
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .feature-icon-wrapper-bold {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .feature-icon-wrapper-bold i {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .hero-feature-card-bold .fs-6 {
+    font-size: 0.86rem !important;
+  }
+
+  /* Hero Car Photo */
+  .hero-car-card-bold img {
+    height: 230px !important;
+  }
+
+  .hero-status-tag {
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    font-size: 0.68rem;
+  }
+
+  /* Vehicle Detail Card */
+  .vehicle-detail-card {
+    padding: 18px 14px !important;
+    border-radius: 16px;
+  }
+
+  .vehicle-detail-card img {
+    max-height: 220px !important;
+  }
+
+  .vehicle-feature-pill {
+    padding: 4px 9px;
+    font-size: 0.75rem;
+  }
+
+  /* Interactive Booking Card */
+  .booking-card-light {
+    padding: 18px 14px !important;
+    border-radius: 16px;
+  }
+
+  .booking-type-toggle-light {
+    width: 100%;
+    display: flex;
+    padding: 3px;
+  }
+
+  .booking-type-btn-light {
+    flex: 1;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 0.82rem;
+  }
+
+  .single-vehicle-banner {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* FORM LABELS & INPUTS (COMPACT & NEAT ON MOBILE) */
+  .form-label-light {
+    font-size: 0.8rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .form-control-light,
+  .form-select-light {
+    padding: 9px 12px 9px 38px !important;
+    font-size: 0.86rem !important;
+    border-radius: 10px !important;
+  }
+
+  .input-icon-left-light {
+    left: 12px !important;
+  }
+
+  .input-icon-left-light i {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .airport-chip-light {
+    padding: 3px 8px;
+    font-size: 0.72rem;
+  }
+
+  .counter-box-light {
+    height: 40px;
+  }
+
+  .counter-btn-light {
+    width: 38px;
+    font-size: 1.1rem;
+  }
+
+  .counter-value-light {
+    font-size: 0.9rem;
+  }
+
+  /* AIRPORT TRANSFER CARDS (2-COLUMN TUNED FOR MOBILE) */
+  .airport-price-card-vip {
+    padding: 11px 9px 9px !important;
+    border-radius: 14px !important;
+  }
+
+  .airport-card-header-vip {
+    margin-bottom: 5px !important;
+    gap: 4px;
+  }
+
+  .airport-iata-chip {
+    padding: 2px 7px;
+    font-size: 0.68rem;
+    gap: 3px;
+  }
+
+  .airport-name-title-vip {
+    font-size: 0.88rem !important;
+    min-height: 38px !important;
+    margin-bottom: 6px !important;
+    line-height: 1.22 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .airport-price-hero-box {
+    padding: 6px 8px !important;
+    margin-bottom: 8px !important;
+    border-radius: 9px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 4px !important;
+  }
+
+  .airport-price-hero-box .airport-price-sublabel {
+    font-size: 0.62rem !important;
+    line-height: 1.1;
+    margin-bottom: 1px;
+  }
+
+  .airport-price-hero-box .airport-price-number {
+    font-size: 1.35rem !important;
+    line-height: 1 !important;
+  }
+
+  .airport-price-hero-box .text-muted {
+    font-size: 0.62rem !important;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .airport-card-features-list {
+    padding: 6px 7px !important;
+    margin-bottom: 8px !important;
+    gap: 4px !important;
+    border-radius: 9px !important;
+  }
+
+  .airport-card-features-list li {
+    font-size: 0.69rem !important;
+    gap: 4px !important;
+    line-height: 1.25 !important;
+  }
+
+  .airport-card-features-list li.feat-highlight {
+    font-size: 0.67rem !important;
+    padding-bottom: 4px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .airport-card-features-list li i,
+  .airport-card-features-list li svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .airport-card-features-list .fare-label {
+    font-size: 0.64rem !important;
+    letter-spacing: -0.015em !important;
+    white-space: nowrap !important;
+  }
+
+  .airport-card-features-list .fare-price {
+    font-size: 0.74rem !important;
+    white-space: nowrap !important;
+  }
+
+  .airport-card-actions {
+    gap: 4px !important;
+  }
+
+  .btn-airport-book {
+    padding: 7px 5px !important;
+    font-size: 0.72rem !important;
+    border-radius: 8px !important;
+    gap: 3px !important;
+  }
+
+  .btn-airport-book span {
+    white-space: nowrap;
+  }
+
+  .btn-airport-book i,
+  .btn-airport-book svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .btn-airport-wa {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .btn-airport-wa i,
+  .btn-airport-wa svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .airport-trust-ribbon {
+    padding: 12px 14px;
+    margin-top: 20px;
+    border-radius: 12px;
+  }
+
+  /* Why Choose Us & How It Works Cards */
+  .why-card-light {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .why-icon-light {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+
+  .why-icon-light i {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .why-card-light h3 {
+    font-size: 0.96rem !important;
+  }
+
+  .how-step-card-light {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .how-step-number-light {
+    font-size: 2rem;
+    top: 12px;
+    right: 16px;
+  }
+
+  /* Testimonial Card */
+  .testimonial-card-light {
+    padding: 22px 16px;
+    border-radius: 16px;
+  }
+
+  #testimonialQuote {
+    font-size: 0.92rem !important;
+  }
+
+  #testimonialAuthor {
+    font-size: 0.88rem !important;
+  }
+
+  /* Contact Section */
+  .contact-card-light {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+
+  .contact-card-light h3 {
+    font-size: 1.1rem !important;
+  }
+
+  /* FAQ Items */
+  .faq-header-light {
+    padding: 14px 16px;
+  }
+
+  .faq-header-light h3 {
+    font-size: 0.88rem !important;
+  }
+
+  .faq-body-light p {
+    font-size: 0.82rem !important;
+  }
+
+  /* Floating WhatsApp Widget on Mobile */
+  .wa-widget-container {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    right: 14px;
+    z-index: 9999;
+  }
+
+  .wa-trigger-btn {
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+  }
+
+  .wa-trigger-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .wa-chat-window {
+    width: 320px;
+    max-width: calc(100vw - 28px);
+    right: 0;
+    bottom: 64px;
+  }
+
+  .wa-header {
+    padding: 12px 14px;
+  }
+
+  .wa-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .wa-header-info h6 {
+    font-size: 0.88rem;
+  }
+
+  .wa-status-text {
+    font-size: 0.7rem;
+  }
+
+  .wa-chat-body {
+    padding: 14px;
+    min-height: 170px;
+    max-height: 260px;
+  }
+
+  .wa-msg-bubble {
+    font-size: 0.82rem;
+    padding: 10px 12px;
+  }
+
+  .wa-chip {
+    padding: 4px 10px;
+    font-size: 0.72rem;
+  }
+
+  /* Back to Top Button */
+  .back-to-top-bold {
+    bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+    left: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .back-to-top-bold i {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  /* Footer on Mobile */
+  .site-footer-advanced {
+    padding: 35px 0 20px;
+  }
+
+  .footer-vip-cta-banner {
+    padding: 14px 12px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .footer-live-status-pill {
+    font-size: 0.72rem;
+    padding: 2px 10px;
+    margin-bottom: 4px;
+  }
+
+  .footer-vip-cta-text h3 {
+    font-size: 0.98rem;
+    line-height: 1.25;
+    margin-bottom: 3px;
+  }
+
+  .footer-vip-cta-text p {
+    font-size: 0.76rem;
+    line-height: 1.35;
+    color: #94A3B8;
+  }
+
+  .footer-vip-cta-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px !important;
+  }
+
+  .btn-footer-call,
+  .btn-footer-whatsapp,
+  .btn-footer-book {
+    padding: 7px 12px !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 6px !important;
+    border-radius: 9999px !important;
+  }
+
+  .btn-footer-call i,
+  .btn-footer-whatsapp i,
+  .btn-footer-book i {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .footer-glass-card-advanced {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+
+  .footer-glass-card-advanced h4 {
+    font-size: 0.98rem;
+    margin-bottom: 12px;
+  }
+
+  .footer-logo-ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .footer-brand-desc {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+
+  .trust-badge-pill {
+    padding: 5px 8px;
+    font-size: 0.72rem;
+  }
+
+  .trust-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-link-pill-list a {
+    padding: 6px 10px;
+    font-size: 0.82rem;
+  }
+
+  .airport-pill {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+
+  .airport-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer-info-item-box {
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .footer-info-label {
+    font-size: 0.65rem;
+  }
+
+  .footer-info-val {
+    font-size: 0.82rem;
+  }
+
+  .pay-badge {
+    padding: 3px 6px;
+    font-size: 0.68rem;
+  }
+
+  .pay-badge i {
+    width: 11px;
+    height: 11px;
+  }
+
+  .footer-bottom-advanced {
+    margin-top: 30px;
+    padding-top: 16px;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    font-size: 0.78rem;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.76rem;
+  }
+
+  .btn-footer-scroll-top {
+    padding: 5px 14px;
+    font-size: 0.75rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   EXTRA SMALL MOBILE DEVICES (max-width: 399.98px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 399.98px) {
+  .hero-title-bold {
+    font-size: 1.65rem !important;
+  }
+
+  .section-title-light {
+    font-size: 1.3rem !important;
+  }
+
+  .airport-price-card-vip {
+    padding: 9px 7px 7px !important;
+  }
+
+  .airport-name-title-vip {
+    font-size: 0.82rem !important;
+    min-height: 34px !important;
+  }
+
+  .airport-price-hero-box {
+    padding: 5px 6px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .airport-price-hero-box .airport-price-number {
+    font-size: 1.25rem !important;
+  }
+
+  .airport-price-hero-box .text-muted {
+    font-size: 0.58rem !important;
+  }
+
+  .airport-card-features-list {
+    padding: 5px 6px !important;
+    margin-bottom: 6px !important;
+    gap: 3px !important;
+  }
+
+  .airport-card-features-list li {
+    font-size: 0.65rem !important;
+  }
+
+  .airport-card-features-list .fare-label {
+    font-size: 0.60rem !important;
+    letter-spacing: -0.02em !important;
+    white-space: nowrap !important;
+  }
+
+  .airport-card-features-list .fare-price {
+    font-size: 0.70rem !important;
+    white-space: nowrap !important;
+  }
+
+  .btn-airport-book {
+    padding: 6px 4px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .btn-airport-wa {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE FIX LAYER (Mobile + Tablet polish)
+   Loaded last so it safely overrides the rules above.
+   ========================================================================== */
+
+/* ---------- Global safety ---------- */
+html {
+  overflow-x: clip;
+}
+
+.contact-card-light a,
+.footer-glass-card-advanced a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.contact-card-light .d-flex>div:last-child,
+.footer-info-item-box>div {
+  min-width: 0;
+}
+
+.faq-header-light {
+  gap: 12px;
+}
+
+.faq-header-light>i,
+.faq-header-light>svg {
+  flex-shrink: 0;
+}
+
+/* Return-trip inner row was shifted left by Bootstrap negative margins */
+.return-trip-row>.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Drawer: use transform (no off-canvas width leak) + dynamic viewport height */
+.mobile-drawer {
+  right: 0;
+  transform: translateX(110%);
+  visibility: hidden;
+  height: 100vh;
+  height: 100dvh;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+}
+
+.mobile-drawer.open {
+  right: 0;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* ---------- Small laptop / tablet landscape (992px – 1199px) ----------
+   Desktop nav + phone pill + book button + big logo don't fit here. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .header-logo-img {
+    width: 68px !important;
+    height: 68px !important;
+  }
+
+  .brand-main-name-light {
+    font-size: 1.6rem;
+  }
+
+  .brand-sub-name-light {
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+  }
+
+  .nav-link-light {
+    font-size: 0.86rem;
+    padding: 8px 9px;
+  }
+
+  .header-phone-pill-light {
+    display: none !important;
+  }
+
+  #headerBookBtn {
+    padding: 9px 16px !important;
+    font-size: 0.84rem !important;
+  }
+
+  .hero-title-bold {
+    font-size: 3rem !important;
+  }
+}
+
+/* ---------- Tablet & below (max 991.98px) ---------- */
+@media (max-width: 991.98px) {
+
+  /* Space so the sticky bottom bar never hides footer content */
+  body {
+    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-sticky-cta-light {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .header-logo-img {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .brand-main-name-light {
+    font-size: 1.5rem;
+  }
+
+  .brand-sub-name-light {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+  }
+
+  /* Hero image: shorter when stacked under the text */
+  .hero-car-card-bold img {
+    height: 320px !important;
+  }
+
+  /* Floating buttons above the sticky bar */
+  .wa-widget-container {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .back-to-top-bold {
+    bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* iOS Safari does not support fixed backgrounds (renders zoomed/blurry) */
+  .site-footer-light,
+  .site-footer-advanced {
+    background-attachment: scroll;
+  }
+
+  .how-section-light {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .toast-container-custom {
+    top: 84px;
+    right: 12px;
+    left: 12px;
+  }
+
+  .toast-custom {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* ---------- Mobile (max 767.98px) ---------- */
+@media (max-width: 767.98px) {
+
+  /* Inputs >= 16px prevents iOS auto-zoom on focus */
+  .form-control-light,
+  .form-select-light,
+  .wa-input {
+    font-size: 16px !important;
+  }
+
+  .form-control-light[type="date"],
+  .form-control-light[type="time"] {
+    -webkit-appearance: none;
+    appearance: none;
+    min-height: 44px;
+    text-align: left;
+    display: block;
+  }
+
+  .form-control-light::-webkit-date-and-time-value {
+    text-align: left;
+  }
+
+  /* Header */
+  .header-logo-img {
+    width: 58px !important;
+    height: 58px !important;
+    border-width: 2px !important;
+  }
+
+  .brand-main-name-light {
+    font-size: 1.75rem !important;
+    line-height: 1.0 !important;
+    white-space: nowrap !important;
+  }
+
+  .brand-sub-name-light {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.14em !important;
+    white-space: nowrap !important;
+  }
+
+  .header-top-bar {
+    font-size: 0.75rem;
+  }
+
+  html {
+    scroll-padding-top: 110px;
+  }
+
+  /* Hero */
+  .hero-section-light {
+    padding-top: 125px !important;
+    text-align: left;
+  }
+
+  .hero-feature-card-bold {
+    padding: 8px 10px !important;
+    gap: 8px !important;
+    border-radius: 12px !important;
+  }
+
+  .feature-icon-wrapper-bold {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 8px !important;
+  }
+
+  .hero-badge-bold {
+    letter-spacing: 0.03em;
+    max-width: 100%;
+    line-height: 1.35;
+  }
+
+  .hero-badge-bold svg,
+  .hero-badge-bold i {
+    flex-shrink: 0;
+  }
+
+  .hero-car-card-bold img {
+    height: 230px !important;
+  }
+
+  .hero-car-card-bold {
+    border-radius: 18px;
+  }
+
+  .hero-cta-group,
+  .vehicle-cta-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+
+  /* Pricing cards (2-col): stop text from overflowing narrow cards */
+  .airport-price-hero-box {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+  }
+
+  .airport-price-hero-box .text-end {
+    text-align: left !important;
+  }
+
+  .airport-card-features-list li {
+    flex-wrap: wrap;
+    row-gap: 0 !important;
+  }
+
+  .airport-card-features-list .fare-label {
+    white-space: normal !important;
+    font-size: 0.66rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  .airport-name-title-vip {
+    overflow-wrap: anywhere;
+  }
+
+  /* Trust ribbon */
+  .airport-trust-ribbon .d-flex {
+    gap: 10px !important;
+    text-align: left;
+  }
+
+  .airport-trust-ribbon .rounded-circle {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  /* Vehicle */
+  .vehicle-detail-card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Why Choose Us Cards 2-per-row on Mobile */
+  .why-card-light {
+    padding: 16px 14px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .why-icon-light {
+    width: 42px !important;
+    height: 42px !important;
+    margin-bottom: 12px !important;
+    border-radius: 10px !important;
+  }
+
+  .why-icon-light svg,
+  .why-icon-light i {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .why-card-light h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .why-card-light p {
+    font-size: 0.78rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Contact details */
+  .contact-card-light .fs-6 {
+    font-size: 0.92rem !important;
+  }
+
+  .contact-card-light .brand-crest-light {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Booking header */
+  .booking-card-light h2 {
+    font-size: 1.35rem;
+  }
+
+  .booking-card-light .text-md-end {
+    text-align: left;
+  }
+
+  /* Footer CTA buttons full width */
+  .footer-vip-cta-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 5px !important;
+  }
+
+  .footer-bottom-advanced {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px !important;
+  }
+
+  /* Booking summary modal */
+  #bookingSummaryModal .modal-dialog {
+    margin: 12px;
+  }
+
+  #bookingSummaryModal .modal-header,
+  #bookingSummaryModal .modal-body {
+    padding: 16px !important;
+  }
+
+  #bookingSummaryModal .modal-footer {
+    flex-direction: column-reverse;
+    align-items: stretch !important;
+  }
+
+  #bookingSummaryModal .modal-footer>.btn,
+  .modal-action-group {
+    width: 100%;
+  }
+
+  .modal-action-group {
+    flex-direction: column;
+  }
+
+  /* WhatsApp chat window must fit above trigger on short screens */
+  .wa-chat-window {
+    max-height: calc(100dvh - 180px);
+  }
+
+  .wa-chat-body {
+    max-height: none;
+    flex: 1 1 auto;
+  }
+}
+
+/* ---------- Very small phones (max 359.98px) ---------- */
+@media (max-width: 359.98px) {
+  .brand-sub-name-light {
+    display: none;
+  }
+
+  .row.g-2>.col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   SIMPLE VEHICLE GALLERY SECTION
+   ========================================================================== */
+.fleet-gallery-section {
+  padding: 80px 0;
+  background-color: var(--bg-alt);
+  position: relative;
+}
+
+.gallery-photo-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0F172A;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.gallery-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.gallery-photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-primary);
+}
+
+.gallery-photo-card:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-photo-card:hover .gallery-photo-overlay {
+  opacity: 1;
+}
+
+/* Fleet Lightbox Modal - Pure Image & Close Button */
+.fleet-lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.fleet-lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fleet-lightbox-content {
+  background: transparent;
+  border-radius: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  box-shadow: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fleet-lightbox-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  z-index: 30;
+  background: #FFFFFF;
+  color: #0F172A;
+  border: 1px solid var(--border-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.fleet-lightbox-close:hover {
+  background: var(--blue-primary);
+  color: #FFFFFF;
+  border-color: var(--blue-primary);
+  transform: scale(1.1);
+}
+
+.fleet-lightbox-img-wrap {
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 85vh;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.fleet-lightbox-img-wrap img {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 16px;
+}
+
+@media (max-width: 576px) {
+  .fleet-lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
+}
