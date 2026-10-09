@@ -9,6 +9,7 @@ export default function BookingSummaryModal({
   onClose,
   onConfirm,
   onWhatsApp,
+  isSubmitting = false,
 }) {
   useEffect(() => {
     if (isOpen) {
@@ -178,8 +179,13 @@ export default function BookingSummaryModal({
                 className="btn-primary-blue"
                 id="btnConfirmEnquiry"
                 onClick={onConfirm}
+                disabled={isSubmitting}
+                style={{
+                  opacity: isSubmitting ? 0.75 : 1,
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                }}
               >
-                <span>Confirm &amp; Send Request</span>
+                <span>{isSubmitting ? 'Sending Request...' : 'Confirm & Send Request'}</span>
                 <Send size={16} />
               </button>
             </div>

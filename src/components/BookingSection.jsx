@@ -16,6 +16,8 @@ import {
   FileText,
   Info,
   ChevronRight,
+  MessageCircle,
+  Send,
 } from 'lucide-react';
 
 const stokeAreas = [
@@ -48,7 +50,7 @@ const airportChips = [
 
 export default function BookingSection({
   destinationPreset,
-  onOpenSummary,
+  onWhatsApp,
   showToast,
 }) {
   const [journeyType, setJourneyType] = useState('oneway');
@@ -65,6 +67,7 @@ export default function BookingSection({
   const [custPhone, setCustPhone] = useState('');
   const [custNotes, setCustNotes] = useState('');
   const [minDate, setMinDate] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const today = new Date();
@@ -102,7 +105,7 @@ export default function BookingSection({
     setLuggage((prev) => Math.max(0, Math.min(11, prev + delta)));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!pickupLocation.trim() || !dropoffLocation.trim()) {
@@ -137,8 +140,9 @@ export default function BookingSection({
       return;
     }
 
+    const refId = 'ARZ-' + Math.floor(100000 + Math.random() * 900000);
     const payload = {
-      refId: 'ZET-' + Math.floor(100000 + Math.random() * 900000),
+      refId,
       journeyType: journeyType === 'return' ? 'Return Journey' : 'One Way Journey',
       pickupLoc: pickupLocation.trim(),
       dropoffLoc: dropoffLocation.trim(),
@@ -156,7 +160,103 @@ export default function BookingSection({
       submittedAt: new Date().toLocaleString('en-GB'),
     };
 
-    onOpenSummary(payload);
+    // Save snapshot in case network error occurs
+    const snapshot = {
+      pickupLocation,
+      dropoffLocation,
+      custName,
+      custEmail,
+      custPhone,
+      custNotes,
+    };
+
+    // Optimistic UI: notify user immediately & reset inputs
+    showToast(
+      `Thank you ${custName.trim()}! Your ride booking enquiry (${refId}) has been sent successfully.`,
+      'success'
+    );
+
+    try {
+      const stored = JSON.parse(
+        localStorage.getItem('arz_enquiries') ||
+          localStorage.getItem('zet_enquiries') ||
+          '[]'
+      );
+      stored.unshift(payload);
+      localStorage.setItem('arz_enquiries', JSON.stringify(stored));
+    } catch (_) {}
+
+    // Reset customer fields
+    setPickupLocation('');
+    setDropoffLocation('');
+    setCustName('');
+    setCustEmail('');
+    setCustPhone('');
+    setCustNotes('');
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      });
+
+      if (!res.ok) {
+        const result = await res.json().catch(() => ({}));
+        // Restore data on failure
+        setPickupLocation(snapshot.pickupLocation);
+        setDropoffLocation(snapshot.dropoffLocation);
+        setCustName(snapshot.custName);
+        setCustEmail(snapshot.custEmail);
+        setCustPhone(snapshot.custPhone);
+        setCustNotes(snapshot.custNotes);
+        showToast(
+          result.error ||
+            'Failed to send booking request via email. Please contact via WhatsApp.',
+          'error'
+        );
+      }
+    } catch (err) {
+      setPickupLocation(snapshot.pickupLocation);
+      setDropoffLocation(snapshot.dropoffLocation);
+      setCustName(snapshot.custName);
+      setCustEmail(snapshot.custEmail);
+      setCustPhone(snapshot.custPhone);
+      setCustNotes(snapshot.custNotes);
+      showToast('Server connection error. Please send your enquiry via WhatsApp.', 'error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleWhatsAppDirect = () => {
+    if (!pickupLocation.trim() || !dropoffLocation.trim()) {
+      showToast('Please enter both a pickup location and destination for WhatsApp booking.', 'error');
+      return;
+    }
+
+    let waText = `*ARZ Airport Travel - Ride Booking Enquiry*\n\n`;
+    waText += `*Journey Type:* ${journeyType === 'return' ? 'Return Journey' : 'One Way'}\n`;
+    waText += `📍 *Pickup:* ${pickupLocation.trim()}\n`;
+    waText += `🏁 *Destination:* ${dropoffLocation.trim()}\n`;
+    waText += `📅 *Pickup Time:* ${pickupDate || 'Today'} at ${pickupTime || 'ASAP'}\n`;
+    if (journeyType === 'return' && returnDate) {
+      waText += `🔄 *Return Time:* ${returnDate} at ${returnTime}\n`;
+    }
+    waText += `👥 *Passengers:* ${passengers} | 🧳 *Luggage:* ${luggage} bags\n`;
+    if (custName.trim()) waText += `👤 *Client Name:* ${custName.trim()}\n`;
+    if (custPhone.trim()) waText += `📞 *Phone:* ${custPhone.trim()}\n`;
+    if (custEmail.trim()) waText += `📧 *Email:* ${custEmail.trim()}\n`;
+    if (custNotes.trim() && custNotes.trim() !== 'None specified') {
+      waText += `📝 *Flight / Notes:* ${custNotes.trim()}\n`;
+    }
+    waText += `\nPlease provide your best fixed price quotation. Thank you!`;
+
+    if (onWhatsApp) {
+      onWhatsApp(waText);
+    }
   };
 
   return (
@@ -575,7 +675,7 @@ export default function BookingSection({
                 </div>
               </div>
 
-              {/* Bottom Disclaimer & Button */}
+              {/* Bottom Disclaimer & Buttons */}
               <div className="col-12 mt-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
                 <div className="d-flex align-items-center gap-2 text-muted small">
                   <Info size={18} style={{ color: 'var(--blue-primary)', flexShrink: 0 }} />
@@ -585,10 +685,32 @@ export default function BookingSection({
                   </span>
                 </div>
 
-                <button type="submit" className="btn-primary-blue flex-shrink-0" id="submitBookingBtn">
-                  <span>Request My Booking</span>
-                  <ChevronRight size={18} />
-                </button>
+                <div className="d-flex flex-wrap align-items-center gap-2 flex-shrink-0">
+                  {onWhatsApp && (
+                    <button
+                      type="button"
+                      className="btn-whatsapp-light"
+                      id="btnDirectWhatsAppBooking"
+                      onClick={handleWhatsAppDirect}
+                    >
+                      <MessageCircle size={18} />
+                      <span>Book via WhatsApp</span>
+                    </button>
+                  )}
+                  <button
+                    type="submit"
+                    className="btn-primary-blue"
+                    id="submitBookingBtn"
+                    disabled={isSubmitting}
+                    style={{
+                      opacity: isSubmitting ? 0.75 : 1,
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                    }}
+                  >
+                    <span>{isSubmitting ? 'Booking Sent ✓' : 'Send Booking via Email'}</span>
+                    <Send size={16} />
+                  </button>
+                </div>
               </div>
             </div>
           </form>

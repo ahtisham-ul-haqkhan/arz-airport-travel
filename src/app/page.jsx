@@ -14,7 +14,6 @@ import ReviewsSection from '@/components/ReviewsSection';
 import ContactSection from '@/components/ContactSection';
 import FaqSection from '@/components/FaqSection';
 import BookingSection from '@/components/BookingSection';
-import BookingSummaryModal from '@/components/BookingSummaryModal';
 import BookingSuccessModal from '@/components/BookingSuccessModal';
 import Footer from '@/components/Footer';
 import MobileStickyCta from '@/components/MobileStickyCta';
@@ -29,8 +28,6 @@ export default function HomePage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [airportPreset, setAirportPreset] = useState('');
-  const [summaryModalOpen, setSummaryModalOpen] = useState(false);
-  const [summaryData, setSummaryData] = useState(null);
   const [successModalOpen, setSuccessModalOpen] = useState(false);
   const [successData, setSuccessData] = useState(null);
   const [legalModal, setLegalModal] = useState(null);
@@ -79,56 +76,7 @@ export default function HomePage() {
     showToast(`Selected destination: ${destinationString}`, 'info');
   };
 
-  const handleOpenSummary = (payload) => {
-    setSummaryData(payload);
-    setSummaryModalOpen(true);
-  };
 
-  const handleConfirmBooking = () => {
-    if (!summaryData) return;
-
-    try {
-      const stored = JSON.parse(localStorage.getItem('zet_enquiries') || '[]');
-      stored.unshift(summaryData);
-      localStorage.setItem('zet_enquiries', JSON.stringify(stored));
-    } catch (err) {
-      console.warn('Storage warning:', err);
-    }
-
-    setSuccessData(summaryData);
-    setSummaryModalOpen(false);
-    setSuccessModalOpen(true);
-    showToast(
-      `Enquiry (Ref: ${summaryData.refId}) confirmed! Our team will contact you shortly.`,
-      'success'
-    );
-  };
-
-  const handleSendWhatsAppFromSummary = () => {
-    if (!summaryData) return;
-    const p = summaryData;
-    let text = `*ARZ Airport Travel - New Booking Enquiry*\n`;
-    text += `Reference: ${p.refId}\n\n`;
-    text += `*Journey Type:* ${p.journeyType}\n`;
-    text += `*Pickup:* ${p.pickupLoc}\n`;
-    text += `*Destination:* ${p.dropoffLoc}\n`;
-    text += `*Pickup Time:* ${p.pickupDate} at ${p.pickupTime}\n`;
-    if (p.returnDate) {
-      text += `*Return Time:* ${p.returnDate} at ${p.returnTime}\n`;
-    }
-    text += `*Vehicle Preference:* ${p.vehicleName}\n`;
-    text += `*Passengers:* ${p.passengers} | *Luggage:* ${p.luggage} bags\n`;
-    text += `*Client Name:* ${p.fullName}\n`;
-    text += `*Contact Phone:* ${p.phone}\n`;
-    text += `*Email:* ${p.email}\n`;
-    if (p.notes && p.notes !== 'None specified') {
-      text += `*Special Instructions:* ${p.notes}\n`;
-    }
-    text += `\nPlease provide availability and our fixed quotation. Thank you!`;
-
-    setSummaryModalOpen(false);
-    openWhatsApp(text);
-  };
 
   return (
     <>
@@ -167,7 +115,7 @@ export default function HomePage() {
 
         <BookingSection
           destinationPreset={airportPreset}
-          onOpenSummary={handleOpenSummary}
+          onWhatsApp={openWhatsApp}
           showToast={showToast}
         />
       </main>
@@ -196,14 +144,6 @@ export default function HomePage() {
         onNavigate={handleNavigateLightbox}
       />
 
-      {/* Booking Summary Modal */}
-      <BookingSummaryModal
-        isOpen={summaryModalOpen}
-        data={summaryData}
-        onClose={() => setSummaryModalOpen(false)}
-        onConfirm={handleConfirmBooking}
-        onWhatsApp={handleSendWhatsAppFromSummary}
-      />
 
       {/* Booking Success Confirmation Modal */}
       <BookingSuccessModal
