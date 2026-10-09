@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://arzairporttravel.co.uk/sitemap.xml',
+    sitemap: 'https://www.arzairporttravel.co.uk/sitemap.xml',
   };
 }
