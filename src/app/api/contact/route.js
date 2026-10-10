@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 // Reuse one pooled SMTP connection across requests (avoids TLS + auth handshake every time).
 // Stored on globalThis so it survives hot-reloads in dev and warm invocations in production.
 function getTransporter({ host, port, secure, user, pass }) {
-  const key = `${host}:${port}:${user}`;
+  const key = `${host}:${port}:${user}:${pass}`;
   if (!globalThis.__arzMailer || globalThis.__arzMailer.key !== key) {
     const transporter = nodemailer.createTransport({
       pool: true,
@@ -246,7 +246,7 @@ export async function POST(request) {
     const secure = process.env.SMTP_SECURE === 'true' || port === 465;
     const user = process.env.SMTP_USER;
     const pass = process.env.SMTP_PASS;
-    const receiver = process.env.CONTACT_RECEIVER_EMAIL || user || 'zafarirshad97@gmail.com';
+    const receiver = process.env.CONTACT_RECEIVER_EMAIL || user || 'arzairporttravel@gmail.com';
 
     if (!user || !pass || pass === 'your_app_password_here') {
       return NextResponse.json(

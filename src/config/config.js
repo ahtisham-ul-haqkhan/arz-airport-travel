@@ -16,7 +16,7 @@ export const CONFIG = {
   // Contact Information
   phoneNumber: "+44 7828 533942",
   phoneRaw: "+447828533942",
-  email: "zafarirshad97@gmail.com",
+  email: "arzairporttravel@gmail.com",
   address: "Stoke-on-Trent, Staffordshire, United Kingdom",
   operatingHours: "24/7 Pre-booked Service & Customer Enquiries",
 

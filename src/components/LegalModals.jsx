@@ -83,7 +83,7 @@ export default function LegalModals({ activeModal, onClose }) {
                 <h6 className="fw-bold text-dark mt-3 mb-2">4. Data Security</h6>
                 <p>
                   All data is handled following UK Data Protection standards and GDPR guidelines. If you wish to review
-                  or delete your records, you may contact us directly via email at zafarirshad97@gmail.com.
+                  or delete your records, you may contact us directly via email at arzairporttravel@gmail.com.
                 </p>
               </div>
             ) : (
