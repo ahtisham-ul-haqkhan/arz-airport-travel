@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARZ Airport Travel - Official Business Cards (Visiting Card)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy-dark: #0a1128;
+      --navy-rich: #0c183a;
+      --gold-primary: #d4af37;
+      --gold-light: #f7e7a9;
+      --gold-dark: #aa820a;
+      --blue-sapphire: #1d4ed8;
+      --blue-light: #2563eb;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      padding: 24px 16px 80px;
+    }
+
+    /* Toolbar / Header */
+    .app-header {
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .app-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .app-title {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .app-subtitle {
+      font-size: 15px;
+      color: #94a3b8;
+      max-width: 650px;
+      margin: 0 auto 20px;
+    }
+
+    /* Action bar */
+    .controls-bar {
+      max-width: 1200px;
+      margin: 0 auto 35px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+      color: #0a1128;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #f8fafc;
+      border: 1px solid #475569;
+    }
+
+    .btn-outline:hover,
+    .btn-outline.active {
+      background: #334155;
+      border-color: #94a3b8;
+    }
+
+    /* Live Edit Drawer / Inputs */
+    .customizer-box {
+      max-width: 1200px;
+      margin: 0 auto 35px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .customizer-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .inputs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .input-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 9px 12px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      color: #ffffff;
+      font-size: 13px;
+      font-family: inherit;
+    }
+
+    .input-field input:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    }
+
+    /* Card Showcase Layout */
+    .cards-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .design-block {
+      background: #131d31;
+      border: 1px solid #24334f;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .design-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #24334f;
+      padding-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .design-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .design-tag {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+
+    .cards-pair {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .card-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Exact Business Card Physical Standard (UK / EU: 85mm x 55mm ~ 425px x 275px @ 96dpi on screen, exact 85mm on print) */
+    .visiting-card {
+      width: 425px;
+      height: 275px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      user-select: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+
+    .visiting-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(212, 175, 55, 0.4);
+    }
+
+    /* ========================================================
+       DESIGN 1: LUXURY NAVY & GOLD (CHAUFFEUR EXECUTIVE)
+       ======================================================== */
+    .card-theme-gold {
+      background: radial-gradient(circle at 80% 20%, #152244 0%, #080f24 80%);
+      color: #f8fafc;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .card-theme-gold::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Geometric corner accents */
+    .gold-accent-top {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, transparent 50%, rgba(212, 175, 55, 0.25) 50%, rgba(212, 175, 55, 0.05) 100%);
+      pointer-events: none;
+    }
+
+    .gold-accent-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(315deg, transparent 50%, rgba(212, 175, 55, 0.2) 50%, rgba(212, 175, 55, 0.03) 100%);
+      pointer-events: none;
+    }
+
+    /* Card 1 Front Content */
+    .c1-front {
+      padding: 22px 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .c1-brand-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-symbol {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-symbol svg {
+      width: 26px;
+      height: 26px;
+      fill: #0a1128;
+    }
+
+    .c1-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .c1-brand-name {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      background: linear-gradient(90deg, #fff 0%, #f7e7a9 50%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .c1-brand-tagline {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .c1-middle {
+      margin-top: 6px;
+      border-left: 3px solid #d4af37;
+      padding-left: 10px;
+    }
+
+    .c1-person-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+
+    .c1-person-title {
+      font-size: 10px;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .c1-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .c1-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .c1-contact-icon {
+      width: 16px;
+      height: 16px;
+      color: #d4af37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .c1-contact-icon svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+    }
+
+    /* Card 1 Back Content */
+    .c1-back {
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .c1-back-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .c1-back-logo-big {
+      font-family: 'Cinzel', serif;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      background: linear-gradient(135deg, #ffffff 0%, #f7e7a9 50%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+
+    .c1-back-motto {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: #d4af37;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .c1-back-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 8px;
+    }
+
+    .c1-services-list {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .c1-service-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10.5px;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+
+    .c1-service-dot {
+      width: 5px;
+      height: 5px;
+      background: #d4af37;
+      border-radius: 50%;
+    }
+
+    .c1-qr-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .c1-qr-frame {
+      background: #ffffff;
+      padding: 5px;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 68px;
+      height: 68px;
+    }
+
+    .c1-qr-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .c1-qr-sub {
+      font-size: 8.5px;
+      color: #d4af37;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .c1-back-footer {
+      font-size: 10px;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      width: 100%;
+      padding-top: 8px;
+    }
+
+
+    /* ========================================================
+       DESIGN 2: EXECUTIVE CRISP WHITE & SAPPHIRE BLUE
+       ======================================================== */
+    .card-theme-white {
+      background: #ffffff;
+      color: var(--text-dark);
+      border: 1px solid #cbd5e1;
+    }
+
+    .card-theme-white::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: linear-gradient(180deg, #1d4ed8 0%, #2563eb 100%);
+    }
+
+    /* Card 2 Front */
+    .c2-front {
+      padding: 22px 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .c2-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .c2-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .c2-logo-box {
+      width: 40px;
+      height: 40px;
+      background: #1d4ed8;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
+    }
+
+    .c2-logo-box svg {
+      width: 22px;
+      height: 22px;
+      fill: #ffffff;
+    }
+
+    .c2-brand-name {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+
+    .c2-brand-sub {
+      font-size: 9.5px;
+      color: #1d4ed8;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .c2-status-pill {
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .c2-person {
+      margin-top: 4px;
+    }
+
+    .c2-person-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .c2-person-title {
+      font-size: 10.5px;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .c2-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .c2-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    .c2-icon {
+      color: #1d4ed8;
+      width: 15px;
+      height: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .c2-icon svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    /* Card 2 Back */
+    .c2-back {
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+    }
+
+    .c2-back-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 1px;
+    }
+
+    .c2-back-title span {
+      color: #1d4ed8;
+    }
+
+    .c2-back-quote {
+      font-size: 10px;
+      color: #64748b;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    .c2-back-mid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .c2-back-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .c2-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .c2-check-icon {
+      width: 14px;
+      height: 14px;
+      background: #1d4ed8;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: bold;
+    }
+
+    .c2-qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .c2-qr-img {
+      width: 66px;
+      height: 66px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 3px;
+      background: white;
+    }
+
+    .c2-qr-label {
+      font-size: 8px;
+      font-weight: 700;
+      color: #1d4ed8;
+      text-transform: uppercase;
+    }
+
+    .c2-back-footer {
+      font-size: 10px;
+      font-weight: 700;
+      color: #1d4ed8;
+      letter-spacing: 0.5px;
+    }
+
+
+    /* ========================================================
+       PRINT STYLES: EXACT 85mm x 55mm UK BUSINESS CARD STANDARD
+       ======================================================== */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .app-header,
+      .controls-bar,
+      .customizer-box,
+      .design-header,
+      .card-label,
+      .print-guide-box {
+        display: none !important;
+      }
+
+      .cards-container {
+        display: block !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .design-block {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-bottom: 20mm !important;
+        page-break-after: always;
+      }
+
+      .cards-pair {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10mm !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+      }
+
+      .card-wrapper {
+        page-break-inside: avoid;
+        margin-bottom: 5mm;
+      }
+
+      .visiting-card {
+        width: 85mm !important;
+        height: 55mm !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 15mm 15mm;
+      }
+    }
+
+    /* Print Guide Infobox */
+    .print-guide-box {
+      max-width: 1200px;
+      margin: 40px auto 0;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .print-guide-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 12px;
+    }
+
+    .print-guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .print-guide-item h4 {
+      color: #f8fafc;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="app-badge">Official Print &amp; Digital Suite</div>
+    <h1 class="app-title">ARZ Airport Travel Visiting Cards</h1>
+    <p class="app-subtitle">
+      Professional, print-ready business cards designed for UK executive private hire &amp; airport transfers. Ready to
+      print at 85mm × 55mm standard.
+    </p>
+  </header>
+
+  <!-- Action Controls -->
+  <div class="controls-bar">
+    <div class="btn-group">
+      <button class="btn btn-gold" onclick="window.print()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 6 2 18 2 18 9"></polyline>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+          <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Print Cards / Save as PDF
+      </button>
+      <button class="btn btn-outline" onclick="resetToDefaults()">
+        Reset Default Details
+      </button>
+    </div>
+    <div style="font-size: 13px; color: #94a3b8;">
+      Standard UK Card Size: <strong style="color: #ffffff;">85mm × 55mm</strong> (300 DPI Ready)
+    </div>
+  </div>
+
+  <!-- Live Customizer Inputs -->
+  <div class="customizer-box">
+    <div class="customizer-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"></path>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+      </svg>
+      Live Details Customizer (Apni Details Yahan Edit Karein - Cards me foran update hongi):
+    </div>
+    <div class="inputs-grid">
+      <div class="input-field">
+        <label>Your Name (Naam)</label>
+        <input type="text" id="inputName" value="Zafar Irshad" oninput="updateCardDetails()">
+      </div>
+      <div class="input-field">
+        <label>Designation / Role</label>
+        <input type="text" id="inputTitle" value="Airport Transfer & Chauffeur Services" oninput="updateCardDetails()">
+      </div>
+      <div class="input-field">
+        <label>Phone Number (Mobile)</label>
+        <input type="text" id="inputPhone" value="+44 7828 533942" oninput="updateCardDetails()">
+      </div>
+      <div class="input-field">
+        <label>Email Address</label>
+        <input type="text" id="inputEmail" value="zafarirshad97@gmail.com" oninput="updateCardDetails()">
+      </div>
+      <div class="input-field">
+        <label>Website URL</label>
+        <input type="text" id="inputWebsite" value="www.arzairporttravel.co.uk" oninput="updateCardDetails()">
+      </div>
+      <div class="input-field">
+        <label>Location / Area</label>
+        <input type="text" id="inputLocation" value="Stoke-on-Trent, Staffordshire, UK" oninput="updateCardDetails()">
+      </div>
+      <div class="input-field">
+        <label>Tagline</label>
+        <input type="text" id="inputTagline" value="Your Journey. Our Priority." oninput="updateCardDetails()">
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards Showcase -->
+  <div class="cards-container">
+
+    <!-- ==================== DESIGN 1: ROYAL NAVY & GOLD (CHAUFFEUR LUXURY) ==================== -->
+    <div class="design-block" id="design-gold">
+      <div class="design-header">
+        <div class="design-title">
+          <span>Design 01: Royal Navy &amp; Gold Edition</span>
+          <span class="design-tag" style="background: rgba(212,175,55,0.2); color: #f7e7a9;">Recommended VIP</span>
+        </div>
+        <div style="font-size: 13px; color: #94a3b8;">
+          Luxury Chauffeur &amp; Airport Executive Styling
+        </div>
+      </div>
+
+      <div class="cards-pair">
+        <!-- Front Side -->
+        <div class="card-wrapper">
+          <div class="card-label">Front Side (Samnay Ka Rukh)</div>
+          <div class="visiting-card card-theme-gold">
+            <div class="gold-accent-top"></div>
+            <div class="gold-accent-bottom"></div>
+            <div class="c1-front">
+              <!-- Top Logo & Company Name -->
+              <div class="c1-brand-header">
+                <div class="brand-logo-symbol">
+                  <!-- Plane Icon -->
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                  </svg>
+                </div>
+                <div class="c1-brand-text">
+                  <span class="c1-brand-name">ARZ</span>
+                  <span class="c1-brand-tagline">Airport Travel</span>
+                </div>
+              </div>
+
+              <!-- Center Name & Title -->
+              <div class="c1-middle">
+                <div class="c1-person-name" data-bind="name">Zafar Irshad</div>
+                <div class="c1-person-title" data-bind="title">Airport Transfer & Chauffeur Services</div>
+              </div>
+
+              <!-- Bottom Contact Items -->
+              <div class="c1-contact-list">
+                <div class="c1-contact-item">
+                  <div class="c1-contact-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg>
+                  </div>
+                  <span data-bind="phone">+44 7828 533942</span>
+                </div>
+                <div class="c1-contact-item">
+                  <div class="c1-contact-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <span data-bind="email">zafarirshad97@gmail.com</span>
+                </div>
+                <div class="c1-contact-item">
+                  <div class="c1-contact-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                      </path>
+                    </svg>
+                  </div>
+                  <span data-bind="website">www.arzairporttravel.co.uk</span>
+                </div>
+                <div class="c1-contact-item">
+                  <div class="c1-contact-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <span data-bind="location">Stoke-on-Trent, Staffordshire, UK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Side -->
+        <div class="card-wrapper">
+          <div class="card-label">Back Side (Peechay Ka Rukh)</div>
+          <div class="visiting-card card-theme-gold">
+            <div class="gold-accent-top"></div>
+            <div class="gold-accent-bottom"></div>
+            <div class="c1-back">
+              <!-- Top Branding -->
+              <div class="c1-back-center">
+                <div class="c1-back-logo-big">ARZ</div>
+                <div class="c1-back-motto" data-bind="tagline">Your Journey. Our Priority.</div>
+              </div>
+
+              <!-- Body with Services & QR -->
+              <div class="c1-back-body">
+                <div class="c1-services-list">
+                  <div class="c1-service-item">
+                    <div class="c1-service-dot"></div>
+                    <span>All Major UK Airports (MAN, LHR, LGW, BHX)</span>
+                  </div>
+                  <div class="c1-service-item">
+                    <div class="c1-service-dot"></div>
+                    <span>Wheelchair Accessible Transport</span>
+                  </div>
+                  <div class="c1-service-item">
+                    <div class="c1-service-dot"></div>
+                    <span>24/7 Pre-booked Executive Transfers</span>
+                  </div>
+                  <div class="c1-service-item">
+                    <div class="c1-service-dot"></div>
+                    <span>Flight Tracking &amp; Meet and Greet</span>
+                  </div>
+                </div>
+
+                <!-- QR Code Box -->
+                <div class="c1-qr-block">
+                  <div class="c1-qr-frame">
+                    <img id="qr-gold"
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.arzairporttravel.co.uk&color=0a1128&bgcolor=ffffff"
+                      alt="Scan to Book Online">
+                  </div>
+                  <div class="c1-qr-sub">Scan to Book</div>
+                </div>
+              </div>
+
+              <!-- Bottom Bar -->
+              <div class="c1-back-footer">
+                Book Online: <strong style="color: #ffffff;" data-bind="website">www.arzairporttravel.co.uk</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ==================== DESIGN 2: CRISP WHITE & SAPPHIRE BLUE ==================== -->
+    <div class="design-block" id="design-white">
+      <div class="design-header">
+        <div class="design-title">
+          <span>Design 02: Clean Executive White &amp; Sapphire Blue</span>
+          <span class="design-tag" style="background: rgba(59,130,246,0.2); color: #93c5fd;">High Contrast Print</span>
+        </div>
+        <div style="font-size: 13px; color: #94a3b8;">
+          Ultra crisp corporate aesthetic, high readability for all local UK print shops
+        </div>
+      </div>
+
+      <div class="cards-pair">
+        <!-- Front Side -->
+        <div class="card-wrapper">
+          <div class="card-label">Front Side (Samnay Ka Rukh)</div>
+          <div class="visiting-card card-theme-white">
+            <div class="c2-front">
+              <div class="c2-brand">
+                <div class="c2-logo-wrap">
+                  <div class="c2-logo-box">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="c2-brand-name">ARZ</div>
+                    <div class="c2-brand-sub">Airport Travel</div>
+                  </div>
+                </div>
+                <div class="c2-status-pill">24/7 Available</div>
+              </div>
+
+              <div class="c2-person">
+                <div class="c2-person-name" data-bind="name">Zafar Irshad</div>
+                <div class="c2-person-title" data-bind="title">Airport Transfer & Chauffeur Services</div>
+              </div>
+
+              <div class="c2-contact-grid">
+                <div class="c2-contact-row">
+                  <div class="c2-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg></div>
+                  <span data-bind="phone">+44 7828 533942</span>
+                </div>
+                <div class="c2-contact-row">
+                  <div class="c2-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg></div>
+                  <span data-bind="email">zafarirshad97@gmail.com</span>
+                </div>
+                <div class="c2-contact-row">
+                  <div class="c2-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                      </path>
+                    </svg></div>
+                  <span data-bind="website">www.arzairporttravel.co.uk</span>
+                </div>
+                <div class="c2-contact-row">
+                  <div class="c2-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg></div>
+                  <span data-bind="location">Stoke-on-Trent, Staffordshire, UK</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Side -->
+        <div class="card-wrapper">
+          <div class="card-label">Back Side (Peechay Ka Rukh)</div>
+          <div class="visiting-card card-theme-white">
+            <div class="c2-back">
+              <div>
+                <div class="c2-back-title">ARZ <span>Airport Travel</span></div>
+                <div class="c2-back-quote" data-bind="tagline">"Your Journey. Our Priority."</div>
+              </div>
+
+              <div class="c2-back-mid">
+                <div class="c2-back-badges">
+                  <div class="c2-badge-item">
+                    <span class="c2-check-icon">✓</span>
+                    <span>Manchester, Heathrow &amp; UK Airports</span>
+                  </div>
+                  <div class="c2-badge-item">
+                    <span class="c2-check-icon">✓</span>
+                    <span>Wheelchair Accessible Fleet</span>
+                  </div>
+                  <div class="c2-badge-item">
+                    <span class="c2-check-icon">✓</span>
+                    <span>Direct WhatsApp &amp; Phone Booking</span>
+                  </div>
+                  <div class="c2-badge-item">
+                    <span class="c2-check-icon">✓</span>
+                    <span>Flight Tracking &amp; Punctual Service</span>
+                  </div>
+                </div>
+
+                <div class="c2-qr-wrap">
+                  <img id="qr-white" class="c2-qr-img"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.arzairporttravel.co.uk&color=0f172a&bgcolor=ffffff"
+                    alt="Scan to Book Online">
+                  <span class="c2-qr-label">Scan to Book</span>
+                </div>
+              </div>
+
+              <div class="c2-back-footer" data-bind="website">
+                www.arzairporttravel.co.uk
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Print Guide -->
+  <div class="print-guide-box">
+    <div class="print-guide-title">
+      🖨️ Card Printing Guide &amp; Instructions (Card Banwanay Ke Liyay Tareeqa)
+    </div>
+    <div class="print-guide-grid">
+      <div class="print-guide-item">
+        <h4>1. Standard Dimensions</h4>
+        <p>
+          UK / European Standard Business Card Size: <strong>85mm × 55mm</strong> (Bleed size: 88mm × 58mm). Perfect for
+          VistaPrint, InstantPrint, or any local UK print shop.
+        </p>
+      </div>
+      <div class="print-guide-item">
+        <h4>2. Recommended Paper &amp; Finish</h4>
+        <p>
+          <strong>Paper:</strong> 400gsm or 450gsm Matt Laminated Silk Card.<br>
+          <strong>Finish:</strong> Soft-touch velvet with Metallic Gold Foil on logo for Design 01.
+        </p>
+      </div>
+      <div class="print-guide-item">
+        <h4>3. Direct PDF Export</h4>
+        <p>
+          Click <strong>"Print Cards / Save as PDF"</strong> button above, select destination as <em>"Save as PDF"</em>,
+          paper size <em>A4</em>, and margins <em>Default/None</em>.
+        </p>
+      </div>
+      <div class="print-guide-item">
+        <h4>4. Working QR Code</h4>
+        <p>
+          The QR code is automatically linked to your website (<code>www.arzairporttravel.co.uk</code>) so clients can
+          instantly scan it with their phone camera to book a ride!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateCardDetails() {
+      const name = document.getElementById('inputName').value || 'Zafar Irshad';
+      const title = document.getElementById('inputTitle').value || 'Airport Transfer & Chauffeur Services';
+      const phone = document.getElementById('inputPhone').value || '+44 7828 533942';
+      const email = document.getElementById('inputEmail').value || 'zafarirshad97@gmail.com';
+      const website = document.getElementById('inputWebsite').value || 'www.arzairporttravel.co.uk';
+      const location = document.getElementById('inputLocation').value || 'Stoke-on-Trent, Staffordshire, UK';
+      const tagline = document.getElementById('inputTagline').value || 'Your Journey. Our Priority.';
+
+      document.querySelectorAll('[data-bind="name"]').forEach(el => el.textContent = name);
+      document.querySelectorAll('[data-bind="title"]').forEach(el => el.textContent = title);
+      document.querySelectorAll('[data-bind="phone"]').forEach(el => el.textContent = phone);
+      document.querySelectorAll('[data-bind="email"]').forEach(el => el.textContent = email);
+      document.querySelectorAll('[data-bind="website"]').forEach(el => el.textContent = website);
+      document.querySelectorAll('[data-bind="location"]').forEach(el => el.textContent = location);
+      document.querySelectorAll('[data-bind="tagline"]').forEach(el => el.textContent = tagline);
+
+      // Update QR codes dynamically
+      const targetUrl = website.startsWith('http') ? website : `https://${website}`;
+      const qrGold = document.getElementById('qr-gold');
+      const qrWhite = document.getElementById('qr-white');
+      if (qrGold) qrGold.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(targetUrl)}&color=0a1128&bgcolor=ffffff`;
+      if (qrWhite) qrWhite.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(targetUrl)}&color=0f172a&bgcolor=ffffff`;
+    }
+
+    function resetToDefaults() {
+      document.getElementById('inputName').value = 'Zafar Irshad';
+      document.getElementById('inputTitle').value = 'Airport Transfer & Chauffeur Services';
+      document.getElementById('inputPhone').value = '+44 7828 533942';
+      document.getElementById('inputEmail').value = 'zafarirshad97@gmail.com';
+      document.getElementById('inputWebsite').value = 'www.arzairporttravel.co.uk';
+      document.getElementById('inputLocation').value = 'Stoke-on-Trent, Staffordshire, UK';
+      document.getElementById('inputTagline').value = 'Your Journey. Our Priority.';
+      updateCardDetails();
+    }
+  </script>
+</body>
+
+</html>
