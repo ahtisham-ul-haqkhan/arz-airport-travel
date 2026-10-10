@@ -180,7 +180,9 @@ ${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`
                 </div>
                 <div>
                   <div className="text-muted small">Service Area</div>
-                  <div className="fw-bold text-main fs-6">London &amp; Stoke-on-Trent UK</div>
+                  <div className="fw-bold text-main fs-6">
+                    Stoke-on-Trent &amp; Staffordshire &amp; Surrounding Areas.
+                  </div>
                 </div>
               </div>
             </div>

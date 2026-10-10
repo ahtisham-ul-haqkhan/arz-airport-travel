@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 // Reuse one pooled SMTP connection across requests
 function getTransporter({ host, port, secure, user, pass }) {
-  const key = `${host}:${port}:${user}:${pass}`;
+  const key = `${host}:${port}:${user}`;
   if (!globalThis.__arzMailer || globalThis.__arzMailer.key !== key) {
     const transporter = nodemailer.createTransport({
       pool: true,
