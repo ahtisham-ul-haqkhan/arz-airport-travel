@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Luggage,
   CreditCard,
+  Users,
 } from 'lucide-react';
 
 const airportData = [
@@ -210,6 +211,45 @@ export default function AirportPricesSection({ onSelectAirport, onWhatsApp }) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Larger Groups Banner */}
+        <div
+          className="p-3 px-4 rounded-4 mb-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3"
+          style={{
+            background: 'rgba(37, 99, 235, 0.05)',
+            border: '1px solid rgba(37, 99, 235, 0.15)',
+          }}
+        >
+          <div className="d-flex align-items-center gap-3">
+            <div
+              className="rounded-circle p-2 bg-primary text-white flex-shrink-0"
+              style={{
+                width: 40,
+                height: 40,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Users size={20} />
+            </div>
+            <div>
+              <div className="fw-bold text-main small">Travelling in a Larger Party?</div>
+              <div className="text-muted small">
+                We can also access more vehicles upon request for larger groups!
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="btn btn-outline-primary btn-sm rounded-pill px-3 py-2 fw-medium text-nowrap align-self-start align-self-md-center"
+            onClick={() =>
+              onWhatsApp('Hello, I have a larger group and need to enquire about multiple vehicles.')
+            }
+          >
+            Enquire for Larger Groups
+          </button>
         </div>
 
         {/* Trust Ribbon Guarantee */}

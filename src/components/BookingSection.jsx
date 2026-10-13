@@ -18,7 +18,10 @@ import {
   ChevronRight,
   MessageCircle,
   Send,
+  Users,
+  PhoneCall,
 } from 'lucide-react';
+import CONFIG from '@/config/config';
 
 const stokeAreas = [
   'Stoke-on-Trent (Hanley City Centre)',
@@ -589,6 +592,22 @@ export default function BookingSection({
                 </div>
               </div>
 
+              {/* Larger Groups Helper */}
+              <div className="col-12 mt-2">
+                <div
+                  className="p-2 px-3 rounded-3 d-flex align-items-center gap-2"
+                  style={{
+                    background: 'rgba(37, 99, 235, 0.06)',
+                    border: '1px solid rgba(37, 99, 235, 0.16)',
+                  }}
+                >
+                  <Users size={16} style={{ color: 'var(--blue-primary)', flexShrink: 0 }} />
+                  <span className="small text-muted">
+                    <strong className="text-main">Larger group?</strong> We can also access more vehicles upon request for larger groups!
+                  </span>
+                </div>
+              </div>
+
               {/* Passenger Details: Name, Email, Phone */}
               <div className="col-md-4 mt-3">
                 <label htmlFor="custName" className="form-label-light">
@@ -714,6 +733,65 @@ export default function BookingSection({
               </div>
             </div>
           </form>
+
+          {/* Get in Touch with Your Driver Card */}
+          <div
+            className="mt-4 p-3 p-md-4 rounded-4 d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3"
+            style={{
+              background: '#FFFFFF',
+              border: '1.5px solid var(--border-light, #E2E8F0)',
+              boxShadow: '0 4px 18px rgba(0, 0, 0, 0.04)',
+            }}
+          >
+            <div className="d-flex align-items-center gap-3">
+              <div
+                className="rounded-3 flex-shrink-0 d-flex align-items-center justify-content-center text-white"
+                style={{
+                  width: 48,
+                  height: 48,
+                  background: 'linear-gradient(135deg, #1e40af, #2563eb)',
+                }}
+              >
+                <PhoneCall size={22} />
+              </div>
+              <div>
+                <div className="d-flex align-items-center gap-2 mb-1">
+                  <span className="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-2 py-0-5 rounded-pill small fw-semibold">
+                    Direct Line
+                  </span>
+                  <span className="text-muted small">• 24/7 Availability</span>
+                </div>
+                <h3 className="h5 fw-bold text-main mb-1">Get in Touch with Your Driver</h3>
+                <p className="text-muted small mb-0">
+                  Prefer to speak directly or have a bespoke group enquiry? Call or message us anytime.
+                </p>
+              </div>
+            </div>
+
+            <div className="d-flex flex-wrap align-items-center gap-2 flex-shrink-0">
+              <a
+                href={`tel:${CONFIG.phoneRaw}`}
+                className="btn btn-outline-primary d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill fw-semibold text-decoration-none"
+              >
+                <Phone size={16} />
+                <span>Call {CONFIG.phoneNumber}</span>
+              </a>
+              {onWhatsApp && (
+                <button
+                  type="button"
+                  className="btn-whatsapp-light"
+                  onClick={() =>
+                    onWhatsApp(
+                      'Hello, I would like to get in touch with my driver regarding an airport transfer.'
+                    )
+                  }
+                >
+                  <MessageCircle size={18} />
+                  <span>Chat on WhatsApp</span>
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

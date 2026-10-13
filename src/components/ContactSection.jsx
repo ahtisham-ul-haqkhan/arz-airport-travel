@@ -325,6 +325,12 @@ ${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`
                       <span>Send via WhatsApp</span>
                     </button>
                   </div>
+
+                  <div className="col-12 mt-2">
+                    <p className="text-muted small mb-0 text-center text-md-start">
+                      💡 <strong>Travelling with a party?</strong> We can also access more vehicles upon request for larger groups!
+                    </p>
+                  </div>
                 </div>
               </form>
             </div>

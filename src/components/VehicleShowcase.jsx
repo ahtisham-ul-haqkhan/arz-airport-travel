@@ -100,7 +100,7 @@ export default function VehicleShowcase({ onWhatsApp }) {
                 smooth ride with our dedicated private hire vehicle.
               </p>
 
-              <div className="d-flex flex-wrap gap-2 mb-4">
+              <div className="d-flex flex-wrap gap-2 mb-3">
                 <span className="vehicle-feature-pill">
                   <Users size={16} style={{ color: 'var(--blue-primary)' }} />
                   <span>Up to 8 Passengers</span>
@@ -120,6 +120,19 @@ export default function VehicleShowcase({ onWhatsApp }) {
                 <span className="vehicle-feature-pill">
                   <Accessibility size={16} style={{ color: 'var(--blue-primary)' }} />
                   <span>Wheelchair Accessible Ramp</span>
+                </span>
+              </div>
+
+              <div
+                className="d-flex align-items-center gap-2 p-3 rounded-3 mb-4"
+                style={{
+                  background: 'rgba(37, 99, 235, 0.06)',
+                  border: '1px solid rgba(37, 99, 235, 0.16)',
+                }}
+              >
+                <Users size={18} style={{ color: 'var(--blue-primary)', flexShrink: 0 }} />
+                <span className="text-muted small">
+                  <strong className="text-main">Larger Party?</strong> We can also access more vehicles upon request for larger groups!
                 </span>
               </div>
 
