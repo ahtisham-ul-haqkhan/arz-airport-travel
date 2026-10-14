@@ -84,7 +84,9 @@ const jsonLd = {
       },
       currenciesAccepted: 'GBP',
       paymentAccepted: 'Cash, Credit Card, Debit Card, Contactless, Apple Pay, Google Pay, Bank Transfer',
+      hasMap: 'https://share.google/HAGCvESX43E8nCRjg',
       sameAs: [
+        'https://share.google/HAGCvESX43E8nCRjg',
         'https://www.google.com/search?q=ARZ+Airport+Travel&stick=H4sIAAAAAAAA_-NgU1I1qDCzSEo2TExOTDFMNTY2MzS3MqhIs0xKNktKNTU3NEkzNUkxW8Qq5BgUpeCYWVSQX1SiEFKUWJaaAwDzNCmhPgAAAA&hl=en-GB',
         'https://www.facebook.com/ARZAirportTravel',
       ],
