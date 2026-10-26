@@ -19,6 +19,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
     name: '',
     email: '',
     phone: '',
+    pickupLocation: '',
     subject: '',
     message: '',
   });
@@ -35,10 +36,10 @@ export default function ContactSection({ onWhatsApp, showToast }) {
 
   const handleSubmitEmail = async (e) => {
     e.preventDefault();
-    const { name, email, phone, subject, message } = formData;
+    const { name, email, phone, pickupLocation, subject, message } = formData;
 
-    if (!name.trim() || !email.trim() || !message.trim()) {
-      showToast('Please complete all required fields (Name, Email & Message).', 'error');
+    if (!name.trim() || !email.trim() || !pickupLocation.trim() || !message.trim()) {
+      showToast('Please complete all required fields (Name, Email, Pick-up Location & Message).', 'error');
       return;
     }
 
@@ -51,7 +52,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
     // Optimistic UI: show success instantly, send in background, restore data if it fails
     const submitted = { ...formData };
     showToast('Thank you! Your travel enquiry has been sent successfully.', 'success');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', pickupLocation: '', subject: '', message: '' });
 
     try {
       const stored = JSON.parse(localStorage.getItem('zet_contact_messages') || '[]');
@@ -85,7 +86,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
   };
 
   const handleSendWhatsApp = () => {
-    const { name, email, phone, subject, message } = formData;
+    const { name, email, phone, pickupLocation, subject, message } = formData;
 
     if (!name.trim() && !message.trim()) {
       showToast('Please enter your name and message before sending via WhatsApp.', 'error');
@@ -96,6 +97,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
 👤 *Name:* ${name.trim() || 'Customer'}
 📧 *Email:* ${email.trim() || 'Not provided'}
 📞 *Phone:* ${phone.trim() || 'Not provided'}
+📍 *Pick-up Location:* ${pickupLocation.trim() || 'Not provided'}
 📌 *Subject:* ${subject.trim() || 'General Enquiry'}
 
 💬 *Message:*
@@ -262,6 +264,28 @@ ${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`
                   </div>
 
                   <div className="col-md-6">
+                    <label htmlFor="contactPickupLocation" className="form-label-light">
+                      Pick-up Location <span className="text-danger">*</span>
+                    </label>
+                    <div className="position-relative d-flex align-items-center">
+                      <div className="input-icon-left-light">
+                        <MapPin size={18} />
+                      </div>
+                      <input
+                        type="text"
+                        className="form-control-light"
+                        id="contactPickupLocation"
+                        name="pickupLocation"
+                        value={formData.pickupLocation}
+                        onChange={handleChange}
+                        placeholder="e.g. Stoke-on-Trent / ST1 1AA"
+                        maxLength={100}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12">
                     <label htmlFor="contactSubject" className="form-label-light">
                       Subject
                     </label>

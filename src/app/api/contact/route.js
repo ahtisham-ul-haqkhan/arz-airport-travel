@@ -32,7 +32,7 @@ const esc = (str = '') =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-function buildEmailHtml({ name, email, phone, subject, message, emailSubject, receivedAt }) {
+function buildEmailHtml({ name, email, phone, pickupLocation, subject, message, emailSubject, receivedAt }) {
   const initials = name
     .split(/\s+/)
     .filter(Boolean)
@@ -164,6 +164,7 @@ function buildEmailHtml({ name, email, phone, subject, message, emailSubject, re
                         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                           ${row('📧', 'Email', `<a href="mailto:${esc(email)}" style="color:#8AB4FF;text-decoration:none;">${esc(email)}</a>`)}
                           ${row('📱', 'Phone', phone ? `<a href="tel:${esc(phoneDigits)}" style="color:#F1F5FF;text-decoration:none;">${esc(phone)}</a>` : '<span style="color:#64748B;font-weight:500;">Not provided</span>')}
+                          ${row('📍', 'Pick-up Location', esc(pickupLocation || 'Not provided'))}
                           ${row('🏷️', 'Subject', esc(subject), true)}
                         </table>
                       </td></tr>
@@ -220,7 +221,7 @@ function buildEmailHtml({ name, email, phone, subject, message, emailSubject, re
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, phone, subject, message } = body;
+    const { name, email, phone, pickupLocation, subject, message } = body;
 
     // Basic Validation
     if (!name || !name.trim()) {
@@ -234,6 +235,10 @@ export async function POST(request) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.trim())) {
       return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
+    }
+
+    if (!pickupLocation || !pickupLocation.trim()) {
+      return NextResponse.json({ error: 'Pick-up location is required.' }, { status: 400 });
     }
 
     if (!message || !message.trim()) {
@@ -276,6 +281,7 @@ export async function POST(request) {
       name: name.trim(),
       email: email.trim(),
       phone: phone?.trim() || '',
+      pickupLocation: pickupLocation.trim(),
       subject: subject?.trim() || 'General Enquiry',
       message: message.trim(),
       emailSubject,
@@ -288,6 +294,7 @@ export async function POST(request) {
 Full Name: ${name.trim()}
 Email Address: ${email.trim()}
 Phone Number: ${phone?.trim() || 'Not provided'}
+Pick-up Location: ${pickupLocation.trim()}
 Subject: ${subject?.trim() || 'General Enquiry'}
 Date: ${new Date().toLocaleString('en-GB')}
 

@@ -326,28 +326,29 @@ export default function BookingSection({
               {/* Pickup Location */}
               <div className="col-md-6">
                 <label htmlFor="pickupLocation" className="form-label-light">
-                  <span>Pickup Location (Stoke-on-Trent Area)</span> <span className="text-danger">*</span>
+                  Pick-up Location <span className="text-danger">*</span>
                 </label>
                 <div className="position-relative d-flex align-items-center">
                   <div className="input-icon-left-light">
                     <MapPin size={18} />
                   </div>
-                  <select
-                    className="form-select-light"
+                  <input
+                    type="text"
+                    className="form-control-light"
                     id="pickupLocation"
+                    name="pickupLocation"
+                    list="stokeAreasList"
                     value={pickupLocation}
                     onChange={(e) => setPickupLocation(e.target.value)}
+                    placeholder="e.g. Stoke-on-Trent / ST1 1AA"
+                    maxLength={100}
                     required
-                  >
-                    <option value="" disabled>
-                      Select Stoke-on-Trent Pickup Area...
-                    </option>
+                  />
+                  <datalist id="stokeAreasList">
                     {stokeAreas.map((area) => (
-                      <option key={area} value={area}>
-                        {area}
-                      </option>
+                      <option key={area} value={area} />
                     ))}
-                  </select>
+                  </datalist>
                 </div>
 
                 {/* Quick Stoke Pickup Chips */}
