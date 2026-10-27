@@ -32,7 +32,7 @@ const esc = (str = '') =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-function buildEmailHtml({ name, email, phone, pickupLocation, subject, message, emailSubject, receivedAt }) {
+function buildEmailHtml({ name, email, phone, pickupLocation, dropoffLocation, subject, message, emailSubject, receivedAt }) {
   const initials = name
     .split(/\s+/)
     .filter(Boolean)
@@ -80,7 +80,7 @@ function buildEmailHtml({ name, email, phone, pickupLocation, subject, message, 
 <body style="margin:0;padding:0;background-color:#070B16;-webkit-text-size-adjust:100%;">
   <!-- Preheader -->
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
-    ${esc(name)} sent a new enquiry: ${esc(subject)} — ${esc(message.slice(0, 90))}
+    ${esc(name)} sent a new enquiry: ${esc(pickupLocation)}${dropoffLocation ? ' ➔ ' + esc(dropoffLocation) : ''} — ${esc(message.slice(0, 90))}
   </div>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#070B16" style="background-color:#070B16;">
@@ -164,8 +164,9 @@ function buildEmailHtml({ name, email, phone, pickupLocation, subject, message, 
                         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                           ${row('📧', 'Email', `<a href="mailto:${esc(email)}" style="color:#8AB4FF;text-decoration:none;">${esc(email)}</a>`)}
                           ${row('📱', 'Phone', phone ? `<a href="tel:${esc(phoneDigits)}" style="color:#F1F5FF;text-decoration:none;">${esc(phone)}</a>` : '<span style="color:#64748B;font-weight:500;">Not provided</span>')}
-                          ${row('📍', 'Pick-up Location', esc(pickupLocation || 'Not provided'))}
-                          ${row('🏷️', 'Subject', esc(subject), true)}
+                          ${row('📍', 'Pick-up Location', esc(pickupLocation || 'Not provided'), !dropoffLocation && !subject)}
+                          ${dropoffLocation ? row('🏁', 'Drop-off Location', esc(dropoffLocation), !subject) : ''}
+                          ${subject ? row('🏷️', 'Subject', esc(subject), true) : ''}
                         </table>
                       </td></tr>
                     </table>
@@ -221,7 +222,7 @@ function buildEmailHtml({ name, email, phone, pickupLocation, subject, message, 
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, email, phone, pickupLocation, subject, message } = body;
+    const { name, email, phone, pickupLocation, dropoffLocation, subject, message } = body;
 
     // Basic Validation
     if (!name || !name.trim()) {
@@ -265,7 +266,11 @@ export async function POST(request) {
 
     const transporter = getTransporter({ host, port, secure, user, pass });
 
-    const emailSubject = `✈️ New Enquiry: ${subject?.trim() || 'General Enquiry'} — ${name.trim()}`;
+    const routeLabel = dropoffLocation?.trim()
+      ? `${pickupLocation.trim()} ➔ ${dropoffLocation.trim()}`
+      : (subject?.trim() || pickupLocation?.trim() || 'General Travel Enquiry');
+
+    const emailSubject = `✈️ New Enquiry: ${routeLabel} — ${name.trim()}`;
 
     const receivedAt = new Date().toLocaleString('en-GB', {
       timeZone: 'Europe/London',
@@ -282,7 +287,8 @@ export async function POST(request) {
       email: email.trim(),
       phone: phone?.trim() || '',
       pickupLocation: pickupLocation.trim(),
-      subject: subject?.trim() || 'General Enquiry',
+      dropoffLocation: dropoffLocation?.trim() || '',
+      subject: subject?.trim() || '',
       message: message.trim(),
       emailSubject,
       receivedAt,
@@ -295,8 +301,7 @@ Full Name: ${name.trim()}
 Email Address: ${email.trim()}
 Phone Number: ${phone?.trim() || 'Not provided'}
 Pick-up Location: ${pickupLocation.trim()}
-Subject: ${subject?.trim() || 'General Enquiry'}
-Date: ${new Date().toLocaleString('en-GB')}
+${dropoffLocation ? `Drop-off Location: ${dropoffLocation.trim()}\n` : ''}${subject ? `Subject: ${subject.trim()}\n` : ''}Date: ${new Date().toLocaleString('en-GB')}
 
 Message:
 ${message.trim()}

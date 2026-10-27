@@ -8,7 +8,7 @@ import {
   Mail,
   MapPin,
   User,
-  HelpCircle,
+  Flag,
   MessageSquare,
   Send,
 } from 'lucide-react';
@@ -20,7 +20,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
     email: '',
     phone: '',
     pickupLocation: '',
-    subject: '',
+    dropoffLocation: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,7 +36,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
 
   const handleSubmitEmail = async (e) => {
     e.preventDefault();
-    const { name, email, phone, pickupLocation, subject, message } = formData;
+    const { name, email, pickupLocation, message } = formData;
 
     if (!name.trim() || !email.trim() || !pickupLocation.trim() || !message.trim()) {
       showToast('Please complete all required fields (Name, Email, Pick-up Location & Message).', 'error');
@@ -52,7 +52,7 @@ export default function ContactSection({ onWhatsApp, showToast }) {
     // Optimistic UI: show success instantly, send in background, restore data if it fails
     const submitted = { ...formData };
     showToast('Thank you! Your travel enquiry has been sent successfully.', 'success');
-    setFormData({ name: '', email: '', phone: '', pickupLocation: '', subject: '', message: '' });
+    setFormData({ name: '', email: '', phone: '', pickupLocation: '', dropoffLocation: '', message: '' });
 
     try {
       const stored = JSON.parse(localStorage.getItem('zet_contact_messages') || '[]');
@@ -86,22 +86,24 @@ export default function ContactSection({ onWhatsApp, showToast }) {
   };
 
   const handleSendWhatsApp = () => {
-    const { name, email, phone, pickupLocation, subject, message } = formData;
+    const { name, email, phone, pickupLocation, dropoffLocation, message } = formData;
 
     if (!name.trim() && !message.trim()) {
       showToast('Please enter your name and message before sending via WhatsApp.', 'error');
       return;
     }
 
-    const waText = `*Hello ARZ Airport Travel, I have an enquiry:*
-👤 *Name:* ${name.trim() || 'Customer'}
-📧 *Email:* ${email.trim() || 'Not provided'}
-📞 *Phone:* ${phone.trim() || 'Not provided'}
-📍 *Pick-up Location:* ${pickupLocation.trim() || 'Not provided'}
-📌 *Subject:* ${subject.trim() || 'General Enquiry'}
+    let waText = `*Hello ARZ Airport Travel, I have an enquiry:*\n` +
+      `👤 *Name:* ${name.trim() || 'Customer'}\n` +
+      `📧 *Email:* ${email.trim() || 'Not provided'}\n` +
+      `📞 *Phone:* ${phone.trim() || 'Not provided'}\n` +
+      `📍 *Pick-up Location:* ${pickupLocation.trim() || 'Not provided'}\n`;
 
-💬 *Message:*
-${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`;
+    if (dropoffLocation && dropoffLocation.trim()) {
+      waText += `🏁 *Drop-off Location:* ${dropoffLocation.trim()}\n`;
+    }
+
+    waText += `\n💬 *Message:*\n${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`;
 
     onWhatsApp(waText);
   };
@@ -242,28 +244,6 @@ ${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`
                   </div>
 
                   <div className="col-md-6">
-                    <label htmlFor="contactPhone" className="form-label-light">
-                      Phone Number
-                    </label>
-                    <div className="position-relative d-flex align-items-center">
-                      <div className="input-icon-left-light">
-                        <Phone size={18} />
-                      </div>
-                      <input
-                        type="tel"
-                        className="form-control-light"
-                        id="contactPhone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="07... or +44..."
-                        inputMode="numeric"
-                        maxLength={15}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="col-md-6">
                     <label htmlFor="contactPickupLocation" className="form-label-light">
                       Pick-up Location <span className="text-danger">*</span>
                     </label>
@@ -285,23 +265,45 @@ ${message.trim() || 'Hello, I would like to enquire about your taxi services.'}`
                     </div>
                   </div>
 
-                  <div className="col-12">
-                    <label htmlFor="contactSubject" className="form-label-light">
-                      Subject
+                  <div className="col-md-6">
+                    <label htmlFor="contactDropoffLocation" className="form-label-light">
+                      Drop-off Location
                     </label>
                     <div className="position-relative d-flex align-items-center">
                       <div className="input-icon-left-light">
-                        <HelpCircle size={18} />
+                        <Flag size={18} />
                       </div>
                       <input
                         type="text"
                         className="form-control-light"
-                        id="contactSubject"
-                        name="subject"
-                        value={formData.subject}
+                        id="contactDropoffLocation"
+                        name="dropoffLocation"
+                        value={formData.dropoffLocation}
                         onChange={handleChange}
-                        placeholder="Airport Transfer / Local Journey"
-                        maxLength={50}
+                        placeholder="e.g. Manchester Airport / Terminal 2"
+                        maxLength={100}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="col-12">
+                    <label htmlFor="contactPhone" className="form-label-light">
+                      Phone Number
+                    </label>
+                    <div className="position-relative d-flex align-items-center">
+                      <div className="input-icon-left-light">
+                        <Phone size={18} />
+                      </div>
+                      <input
+                        type="tel"
+                        className="form-control-light"
+                        id="contactPhone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="07... or +44..."
+                        inputMode="numeric"
+                        maxLength={15}
                       />
                     </div>
                   </div>
