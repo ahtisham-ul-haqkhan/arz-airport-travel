@@ -285,7 +285,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-GB">
       <head>
-        {/* Google Search Favicon & Browser Icons */}
+        {/* ===== Google Analytics 4 + Google Ads Tag ===== */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PKXJZM0ZGK"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PKXJZM0ZGK');
+            `,
+          }}
+        />
+        {/* ===== Google Search Favicon & Browser Icons ===== */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
