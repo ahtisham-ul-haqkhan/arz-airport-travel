@@ -3691,3 +3691,573 @@ html {
     right: 8px;
   }
 }
+/* ==========================================================================
+   EXECUTIVE CINEMATIC HERO SECTION (ROYAL BLUE & CRISP WHITE THEME)
+   ========================================================================== */
+.hero-section-executive {
+  position: relative;
+  min-height: 90vh;
+  padding-top: 145px;
+  padding-bottom: 75px;
+  display: flex;
+  align-items: center;
+  background-color: #050B16;
+  background-image: 
+    linear-gradient(135deg, rgba(5, 11, 22, 0.95) 0%, rgba(8, 18, 38, 0.9) 45%, rgba(10, 25, 50, 0.7) 100%),
+    radial-gradient(circle at 82% 35%, rgba(37, 99, 235, 0.3) 0%, transparent 55%),
+    radial-gradient(circle at 18% 70%, rgba(59, 130, 246, 0.25) 0%, transparent 50%),
+    url('/assets/images/hero-bg-executive.jpg');
+  background-size: cover;
+  background-position: center 60%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-executive-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse at 50% -10%, rgba(59, 130, 246, 0.22), transparent 60%),
+    linear-gradient(to bottom, transparent 80%, rgba(5, 11, 22, 0.98) 100%);
+  z-index: 1;
+}
+
+.hero-executive-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Badge (Crisp White & Royal Ice Blue) */
+.hero-luxury-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(37, 99, 235, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(147, 197, 253, 0.55);
+  border-radius: var(--radius-pill);
+  color: #BFDBFE;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 16px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+}
+
+.hero-luxury-badge:hover {
+  background: rgba(37, 99, 235, 0.28);
+  border-color: #93C5FD;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), 0 0 22px rgba(59, 130, 246, 0.55);
+}
+
+.hero-luxury-badge .badge-star {
+  color: #60A5FA;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Typography (Pure White & Vibrant Sapphire Blue Gradient) */
+.hero-luxury-title {
+  font-family: var(--font-heading);
+  font-weight: 900 !important;
+  letter-spacing: -0.035em !important;
+  color: #FFFFFF;
+  line-height: 1.1;
+  font-size: clamp(2.4rem, 4.4vw, 4rem);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.hero-blue-gradient {
+  background: linear-gradient(135deg, #DBEAFE 0%, #60A5FA 45%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+  filter: drop-shadow(0 2px 10px rgba(37, 99, 235, 0.4));
+}
+
+.hero-title-247 {
+  color: #FFFFFF;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.hero-luxury-subtitle {
+  color: #E2E8F0 !important;
+  font-weight: 500 !important;
+  line-height: 1.62;
+  font-size: 1.05rem;
+  max-width: 580px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* CTA Buttons (Crisp White & Royal Blue) */
+.btn-hero-phone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #FFFFFF;
+  color: #1D4ED8 !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.02rem;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  border: 2px solid #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-hero-phone:hover {
+  background: #EFF6FF;
+  border-color: #BFDBFE;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.35);
+  color: #1E40AF !important;
+}
+
+.btn-hero-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.02rem;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-hero-whatsapp:hover {
+  background: linear-gradient(135deg, #22bf5b 0%, #0e7266 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.55);
+  color: #FFFFFF !important;
+}
+
+/* Trust Badges Bottom Row (Blue & White Glassmorphism) */
+.hero-trust-badge-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(8, 18, 38, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 14px;
+  transition: all 0.25s ease;
+  height: 100%;
+}
+
+.hero-trust-badge-card:hover {
+  background: rgba(12, 26, 56, 0.88);
+  border-color: rgba(96, 165, 250, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 16px rgba(37, 99, 235, 0.25);
+}
+
+.hero-trust-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.2);
+  border: 1.5px solid rgba(96, 165, 250, 0.45);
+  color: #60A5FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-trust-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.hero-trust-sub {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #94A3B8;
+  line-height: 1.25;
+}
+
+/* Feature Capability Pills */
+.hero-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #E2E8F0;
+  background: rgba(37, 99, 235, 0.12);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(147, 197, 253, 0.25);
+  transition: all 0.2s ease;
+}
+
+.hero-feature-pill:hover {
+  background: rgba(37, 99, 235, 0.22);
+  border-color: rgba(96, 165, 250, 0.5);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   INSTANT PRICE QUOTE FORM CARD (CRISP WHITE & ROYAL BLUE)
+   ========================================================================== */
+.hero-quote-card {
+  background: #FFFFFF;
+  border-radius: 22px;
+  padding: 28px 28px 22px;
+  box-shadow: 
+    0 25px 60px -10px rgba(0, 0, 0, 0.55),
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-quote-card:hover {
+  box-shadow: 
+    0 30px 70px -10px rgba(0, 0, 0, 0.65),
+    0 15px 35px rgba(37, 99, 235, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.quote-header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  flex-shrink: 0;
+}
+
+.quote-header-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+}
+
+.quote-header-subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748B;
+}
+
+/* Field Group */
+.quote-field-group {
+  margin-bottom: 12px;
+}
+
+.quote-field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.quote-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.quote-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2563EB;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.quote-input {
+  width: 100%;
+  height: 48px;
+  padding: 10px 14px 10px 42px;
+  background: #F8FAFC;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0F172A;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.quote-input:focus {
+  background: #FFFFFF;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.quote-input::placeholder {
+  color: #94A3B8;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+
+.quote-select {
+  width: 100%;
+  height: 48px;
+  padding: 10px 36px 10px 42px;
+  background: #F8FAFC;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #0F172A;
+  transition: all 0.2s ease;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.quote-select:focus {
+  background: #FFFFFF;
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.quote-select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2563EB;
+  pointer-events: none;
+}
+
+/* Quote Submit Button (Vibrant Royal Sapphire Blue & White) */
+.btn-get-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 52px;
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  color: #FFFFFF !important;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.4);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 6px;
+}
+
+.btn-get-quote:hover {
+  background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.55);
+}
+
+.btn-get-quote:hover svg {
+  transform: translateX(4px);
+  transition: transform 0.25s ease;
+}
+
+.btn-get-quote:active {
+  transform: translateY(0);
+}
+
+.quote-trust-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.quote-trust-footer .dot {
+  color: #3B82F6;
+  font-size: 0.8rem;
+}
+
+/* Mobile & Responsive Rules */
+@media (max-width: 991.98px) {
+  .hero-section-executive {
+    padding-top: 130px;
+    padding-bottom: 60px;
+    background-position: center center;
+  }
+
+  .hero-luxury-title {
+    font-size: clamp(2rem, 7vw, 2.85rem);
+  }
+
+  .hero-quote-card {
+    margin-top: 20px;
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section-executive {
+    padding-top: 110px;
+    padding-bottom: 45px;
+  }
+
+  .hero-cta-group {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .btn-hero-phone,
+  .btn-hero-whatsapp {
+    flex: 1;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    gap: 6px;
+  }
+
+  .hero-quote-card {
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .quote-header-title {
+    font-size: 1.25rem;
+  }
+
+  .quote-input,
+  .quote-select {
+    font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+    height: 46px;
+  }
+
+  .btn-get-quote {
+    height: 48px;
+    font-size: 0.98rem;
+  }
+
+  .quote-trust-footer {
+    font-size: 0.65rem;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* Executive Dark Glass Cards for Hero Features (No White Background) */
+.hero-feature-card-executive {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 14px;
+  background: rgba(10, 20, 42, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+}
+
+.hero-feature-card-executive:hover {
+  background: rgba(18, 36, 72, 0.88);
+  border-color: rgba(96, 165, 250, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(37, 99, 235, 0.25);
+}
+
+.feature-icon-box-executive {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.2);
+  border: 1.5px solid rgba(96, 165, 250, 0.4);
+  color: #60A5FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.hero-feature-card-executive:hover .feature-icon-box-executive {
+  background: #2563EB;
+  border-color: #93C5FD;
+  color: #FFFFFF;
+}
+
+.hero-feature-title-executive {
+  font-weight: 800;
+  color: #FFFFFF;
+  font-size: 0.86rem;
+  line-height: 1.25;
+}
+
+.hero-feature-sub-executive {
+  font-weight: 500;
+  color: #94A3B8;
+  font-size: 0.74rem;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+@media (max-width: 575.98px) {
+  .hero-feature-card-executive {
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .feature-icon-box-executive {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  .feature-icon-box-executive svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .hero-feature-title-executive {
+    font-size: 0.78rem;
+  }
+  .hero-feature-sub-executive {
+    font-size: 0.68rem;
+  }
+}

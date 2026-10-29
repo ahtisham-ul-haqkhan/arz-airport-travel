@@ -92,7 +92,7 @@ export default function HomePage() {
 
       {/* Main Page Content */}
       <main>
-        <HeroSection onWhatsApp={openWhatsApp} />
+        <HeroSection onWhatsApp={openWhatsApp} showToast={showToast} />
 
         <VehicleShowcase onWhatsApp={openWhatsApp} />
 
