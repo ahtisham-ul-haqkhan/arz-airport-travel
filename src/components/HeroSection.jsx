@@ -49,6 +49,12 @@ const popularDestinations = [
   'London Luton Airport (LTN)',
 ];
 
+const timeOptions24h = Array.from({ length: 96 }, (_, i) => {
+  const h = String(Math.floor(i / 4)).padStart(2, '0');
+  const m = String((i % 4) * 15).padStart(2, '0');
+  return `${h}:${m}`;
+});
+
 export default function HeroSection({ onWhatsApp, showToast }) {
   const [pickupLocation, setPickupLocation] = useState('');
   const [destination, setDestination] = useState('');
@@ -67,10 +73,11 @@ export default function HeroSection({ onWhatsApp, showToast }) {
     setMinDate(formatted);
     setPickupDate(formatted);
 
-    // Default time: 2 hours from now
+    // Default time: 2 hours from now in 24h format rounded to nearest 15 mins
     const future = new Date(today.getTime() + 2 * 60 * 60 * 1000);
     const hours = String(future.getHours()).padStart(2, '0');
-    const mins = String(future.getMinutes()).padStart(2, '0');
+    const roundedMins = Math.round(future.getMinutes() / 15) * 15;
+    const mins = String(roundedMins >= 60 ? 45 : roundedMins).padStart(2, '0');
     setPickupTime(`${hours}:${mins}`);
   }, []);
 
@@ -323,7 +330,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
                           id="heroPickup"
                           type="text"
                           className="quote-input"
-                          placeholder="Cheltenham, Gloucester..."
+                          placeholder="Stoke-on-Trent (e.g. ST1 1AA)"
                           value={pickupLocation}
                           onChange={(e) => setPickupLocation(e.target.value)}
                           list="heroPickupSuggestions"
@@ -346,7 +353,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
                           id="heroDestination"
                           type="text"
                           className="quote-input"
-                          placeholder="LHR, LGW, Birmingham..."
+                          placeholder="Manchester Airport (MAN), Heathrow..."
                           value={destination}
                           onChange={(e) => setDestination(e.target.value)}
                           list="heroDestinationSuggestions"
@@ -371,7 +378,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
                         <input
                           id="heroDate"
                           type="date"
-                          className="quote-input"
+                          className="quote-input quote-input-date"
                           min={minDate}
                           value={pickupDate}
                           onChange={(e) => setPickupDate(e.target.value)}
@@ -381,22 +388,28 @@ export default function HeroSection({ onWhatsApp, showToast }) {
                     </div>
                   </div>
 
-                  {/* Time */}
+                  {/* Time (24h Format - No AM/PM) */}
                   <div className="col-6 col-sm-4">
                     <div className="quote-field-group">
                       <label className="quote-field-label" htmlFor="heroTime">
-                        TIME
+                        TIME (24H)
                       </label>
                       <div className="quote-input-wrapper">
                         <Clock size={17} className="quote-input-icon" />
-                        <input
+                        <select
                           id="heroTime"
-                          type="time"
-                          className="quote-input"
+                          className="quote-select quote-select-time"
                           value={pickupTime}
                           onChange={(e) => setPickupTime(e.target.value)}
                           required
-                        />
+                        >
+                          {timeOptions24h.map((t) => (
+                            <option key={t} value={t}>
+                              {t}
+                            </option>
+                          ))}
+                        </select>
+                        <ChevronDown size={14} className="quote-select-chevron" />
                       </div>
                     </div>
                   </div>

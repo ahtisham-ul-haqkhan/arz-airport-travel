@@ -4261,3 +4261,71 @@ html {
     font-size: 0.68rem;
   }
 }
+
+
+/* ==========================================================================
+   QUOTE FORM MOBILE & 24H TIME FIXES
+   ========================================================================== */
+.quote-input-date {
+  padding-left: 38px !important;
+  padding-right: 6px !important;
+  font-size: 0.9rem !important;
+  letter-spacing: -0.01em;
+}
+
+.quote-select-time {
+  padding-left: 38px !important;
+  padding-right: 28px !important;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+}
+
+/* Fix mobile squished inputs and date cut-off */
+@media (max-width: 575.98px) {
+  .hero-quote-card {
+    padding: 20px 16px 18px !important;
+  }
+
+  .quote-input,
+  .quote-select {
+    height: 48px !important;
+    padding-left: 34px !important;
+    padding-right: 8px !important;
+    font-size: 0.88rem !important;
+  }
+
+  .quote-input-icon {
+    left: 10px !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .quote-select-chevron {
+    right: 10px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .quote-input-date {
+    padding-left: 30px !important;
+    padding-right: 2px !important;
+    font-size: 0.84rem !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .quote-select-time {
+    padding-left: 30px !important;
+    padding-right: 22px !important;
+    font-size: 0.86rem !important;
+  }
+
+  /* WebKit calendar icon adjustments */
+  .quote-input::-webkit-calendar-picker-indicator {
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer;
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+}
