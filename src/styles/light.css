@@ -4329,3 +4329,855 @@ html {
     transform: scale(0.9);
   }
 }
+
+
+/* ============================================================
+   PREMIUM UI OVERHAUL — ARZ AIRPORT TRAVEL
+   ============================================================ */
+
+/* — Animated gradient background for hero — */
+@keyframes heroGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* — Global smooth animations — */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmerPremium {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(29, 78, 216, 0); }
+}
+
+@keyframes rotateStar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===========================
+   HEADER — PREMIUM GLASSMORPHISM
+   =========================== */
+.site-header-wrapper {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(29, 78, 216, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 24px rgba(15, 23, 42, 0.06) !important;
+}
+
+.site-header-wrapper.scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 4px 32px rgba(15, 23, 42, 0.12) !important;
+  border-bottom-color: rgba(29, 78, 216, 0.15) !important;
+}
+
+.header-top-bar {
+  background: linear-gradient(90deg, #1D4ED8 0%, #1E40AF 50%, #1D4ED8 100%) !important;
+  background-size: 200% auto !important;
+  animation: shimmerPremium 4s linear infinite !important;
+}
+
+.nav-link-light {
+  position: relative;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  padding: 6px 4px !important;
+  transition: color 0.25s ease !important;
+  letter-spacing: 0.01em;
+}
+
+.nav-link-light::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
+  border-radius: 999px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-light:hover::after,
+.nav-link-light.active::after {
+  width: 100%;
+}
+
+.nav-link-light.active {
+  color: #1D4ED8 !important;
+  font-weight: 700 !important;
+}
+
+/* ===========================
+   HERO SECTION — CINEMATIC
+   =========================== */
+.hero-section-executive {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(5, 10, 25, 0.93) 0%, rgba(8, 18, 50, 0.88) 40%, rgba(10, 24, 60, 0.82) 100%),
+    url('/assets/images/hero-bg-executive.jpg') center center / cover no-repeat fixed !important;
+  overflow: hidden;
+}
+
+/* Animated mesh overlay */
+.hero-section-executive::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 60%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 80% 30%, rgba(29, 78, 216, 0.12) 0%, transparent 60%);
+  z-index: 0;
+}
+
+/* Floating geometric accent lines */
+.hero-section-executive::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 30%, rgba(37, 99, 235, 0.04) 100%);
+  z-index: 0;
+  border-left: 1px solid rgba(255,255,255,0.04);
+}
+
+.hero-executive-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+.hero-luxury-title {
+  font-size: clamp(2.2rem, 5.5vw, 4rem) !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  color: #FFFFFF !important;
+  animation: fadeSlideUp 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+.hero-blue-gradient {
+  background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 50%, #BFDBFE 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block;
+}
+
+.hero-title-247 {
+  color: #F59E0B !important;
+  font-size: 0.75em;
+  vertical-align: middle;
+  letter-spacing: -0.01em;
+}
+
+.hero-luxury-badge {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 999px !important;
+  color: #93C5FD !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+  margin-bottom: 20px !important;
+  animation: fadeSlideUp 0.6s ease both;
+}
+
+.hero-luxury-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem) !important;
+  line-height: 1.7 !important;
+  animation: fadeSlideUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+/* CTA Buttons Enhanced */
+.btn-primary-blue-bold {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 14px 28px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4), 0 1px 0 rgba(255,255,255,0.15) inset !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-primary-blue-bold:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.55) !important;
+}
+
+.btn-whatsapp-bold {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%) !important;
+  border-radius: 14px !important;
+  padding: 14px 24px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-whatsapp-bold:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.5) !important;
+}
+
+/* Hero Quote Card */
+.hero-quote-card {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-radius: 24px !important;
+  padding: 32px 28px !important;
+  box-shadow:
+    0 32px 64px rgba(15, 23, 42, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset !important;
+  backdrop-filter: blur(12px);
+  animation: fadeSlideUp 0.9s ease both;
+  animation-delay: 0.3s;
+  border: 1px solid rgba(255,255,255,0.8) !important;
+}
+
+.quote-header-title {
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+}
+
+.quote-header-icon {
+  width: 46px !important;
+  height: 46px !important;
+  background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35) !important;
+}
+
+.quote-field-label {
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #64748B !important;
+  text-transform: uppercase;
+}
+
+.quote-input,
+.quote-select {
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 10px !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  color: #0F172A !important;
+  transition: all 0.2s ease !important;
+  background: #F8FAFC !important;
+}
+
+.quote-input:focus,
+.quote-select:focus {
+  border-color: #3B82F6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+  background: #FFFFFF !important;
+  outline: none !important;
+}
+
+.btn-get-quote {
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%) !important;
+  border-radius: 14px !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  padding: 15px 24px !important;
+  box-shadow: 0 8px 28px rgba(29, 78, 216, 0.45) !important;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-get-quote:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 16px 40px rgba(29, 78, 216, 0.55) !important;
+}
+
+/* Hero Feature Cards */
+.hero-feature-card-executive {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 14px !important;
+  padding: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero-feature-card-executive:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(96, 165, 250, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+.feature-icon-box-executive {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(29, 78, 216, 0.9) 100%) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+}
+
+/* ===========================
+   WHY CHOOSE US — PREMIUM
+   =========================== */
+.why-section-light {
+  padding: 100px 0 !important;
+  background: #FFFFFF !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-section-light::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.why-card-light {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 20px !important;
+  padding: 28px 24px !important;
+  height: 100%;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-card-light::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2563EB, #3B82F6, #60A5FA);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 3px 3px 0 0;
+}
+
+.why-card-light:hover {
+  border-color: #BFDBFE !important;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1) !important;
+  transform: translateY(-6px) !important;
+}
+
+.why-card-light:hover::before {
+  transform: scaleX(1);
+}
+
+.why-icon-light {
+  width: 54px !important;
+  height: 54px !important;
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%) !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1D4ED8 !important;
+  margin-bottom: 18px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1) !important;
+}
+
+.why-card-light:hover .why-icon-light {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35) !important;
+  transform: scale(1.08) rotate(-5deg) !important;
+}
+
+/* ===========================
+   HOW IT WORKS — CONNECTED STEPS
+   =========================== */
+.how-section-light {
+  padding: 100px 0 !important;
+  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.how-step-card-light {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 24px !important;
+  padding: 36px 28px !important;
+  text-align: center !important;
+  position: relative !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  height: 100%;
+  overflow: hidden;
+}
+
+.how-step-card-light:hover {
+  border-color: #BFDBFE !important;
+  box-shadow: 0 24px 48px rgba(37, 99, 235, 0.12) !important;
+  transform: translateY(-8px) !important;
+}
+
+.how-step-number-light {
+  position: absolute !important;
+  top: -1px !important;
+  right: 24px !important;
+  font-size: 5rem !important;
+  font-weight: 900 !important;
+  color: rgba(37, 99, 235, 0.06) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.04em !important;
+  pointer-events: none !important;
+  font-family: var(--font-heading) !important;
+  transition: color 0.3s ease !important;
+}
+
+.how-step-card-light:hover .how-step-number-light {
+  color: rgba(37, 99, 235, 0.12) !important;
+}
+
+.brand-crest-light {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  color: #FFFFFF !important;
+  border-radius: 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  width: 58px !important;
+  height: 58px !important;
+}
+
+.how-step-card-light:hover .brand-crest-light {
+  transform: scale(1.1) rotate(-8deg) !important;
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.45) !important;
+}
+
+/* Step connector line (desktop) */
+@media (min-width: 768px) {
+  .row:has(.how-step-card-light) {
+    position: relative;
+  }
+}
+
+/* ===========================
+   REVIEWS SECTION — PREMIUM CARDS
+   =========================== */
+.testimonials-section-light {
+  padding: 100px 0 !important;
+  background: linear-gradient(180deg, #EFF6FF 0%, #F8FAFC 50%, #FFFFFF 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.testimonials-section-light::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  font-size: 20rem;
+  font-weight: 900;
+  color: rgba(37, 99, 235, 0.04);
+  line-height: 1;
+  pointer-events: none;
+  font-family: Georgia, serif;
+}
+
+.testimonial-card-light {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 28px !important;
+  padding: 44px 40px !important;
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.07) !important;
+  position: relative !important;
+  transition: all 0.3s ease !important;
+}
+
+.testimonial-card-light:hover {
+  box-shadow: 0 28px 60px rgba(37, 99, 235, 0.12) !important;
+  border-color: #BFDBFE !important;
+}
+
+#testimonialQuote {
+  font-size: 1.15rem !important;
+  line-height: 1.75 !important;
+  color: #1E293B !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+
+#testimonialAuthor {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.01em !important;
+}
+
+#testimonialRole {
+  font-size: 0.88rem !important;
+  color: #64748B !important;
+  font-weight: 500 !important;
+}
+
+/* Review Navigation Buttons */
+.testimonial-card-light .btn-outline-secondary {
+  border: 1.5px solid #E2E8F0 !important;
+  color: #64748B !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.25s ease !important;
+}
+
+.testimonial-card-light .btn-outline-secondary:hover {
+  background: #1D4ED8 !important;
+  border-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+  transform: scale(1.08) !important;
+}
+
+/* Google Rating Stars */
+.text-warning svg {
+  filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.35)) !important;
+}
+
+/* ===========================
+   AIRPORT PRICES — PREMIUM CARDS  
+   =========================== */
+.airport-prices-section {
+  background: #FFFFFF !important;
+  padding: 100px 0 !important;
+}
+
+/* ===========================
+   CONTACT — MODERN FORM
+   =========================== */
+.contact-section-light {
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%) !important;
+  padding: 100px 0 !important;
+}
+
+/* ===========================
+   FOOTER — DARK PREMIUM GLASS
+   =========================== */
+.site-footer-advanced {
+  background: linear-gradient(160deg, #050D1F 0%, #0A1628 40%, #060E20 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.site-footer-advanced::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.6) 30%, rgba(96, 165, 250, 0.8) 50%, rgba(37, 99, 235, 0.6) 70%, transparent 100%);
+}
+
+.footer-glass-card-advanced {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 20px !important;
+  padding: 28px 24px !important;
+  transition: all 0.3s ease !important;
+}
+
+.footer-glass-card-advanced:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(96, 165, 250, 0.2) !important;
+}
+
+/* Footer CTA Banner */
+.footer-vip-cta-banner {
+  background: linear-gradient(135deg, rgba(29, 78, 216, 0.3) 0%, rgba(37, 99, 235, 0.15) 100%) !important;
+  border: 1px solid rgba(96, 165, 250, 0.2) !important;
+  border-radius: 24px !important;
+  padding: 36px 32px !important;
+  margin-bottom: 48px !important;
+}
+
+/* Stats / Trust numbers section */
+.arz-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 40px 0;
+  box-shadow: 0 16px 48px rgba(29, 78, 216, 0.35);
+}
+
+.arz-stat-item {
+  padding: 32px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+}
+
+.arz-stat-item:last-child {
+  border-right: none;
+}
+
+.arz-stat-number {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  font-family: var(--font-heading);
+  line-height: 1;
+  margin-bottom: 6px;
+  animation: countUp 0.6s ease both;
+}
+
+.arz-stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 576px) {
+  .arz-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .arz-stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .arz-stat-item {
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    padding: 24px 16px;
+  }
+
+  .arz-stat-item:nth-child(3),
+  .arz-stat-item:nth-child(4) {
+    border-bottom: none;
+  }
+}
+
+/* Google Reviews badge embedded */
+.google-reviews-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1.5px solid #FBBC04;
+  border-radius: 14px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 16px rgba(251, 188, 4, 0.15);
+  margin: 0 auto 32px;
+  width: fit-content;
+}
+
+.google-reviews-banner .g-logo {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.google-reviews-banner .rating-text {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.google-reviews-banner .reviews-count {
+  font-size: 0.88rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.google-reviews-banner .stars {
+  color: #FBBC04;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* Section visual dividers */
+.section-divider-wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* ===========================
+   BACK TO TOP BUTTON
+   =========================== */
+.back-to-top-btn {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.55) !important;
+}
+
+/* ===========================
+   VEHICLE SHOWCASE
+   =========================== */
+.vehicle-showcase-section {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+}
+
+/* ===========================
+   FAQ — ACCORDION
+   =========================== */
+.faq-section-light {
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%) !important;
+  padding: 100px 0 !important;
+}
+
+/* ===========================
+   MOBILE STICKY CTA 
+   =========================== */
+@media (max-width: 767px) {
+  .hero-executive-content {
+    padding-top: 110px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .hero-quote-card {
+    padding: 22px 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .testimonial-card-light {
+    padding: 28px 20px !important;
+  }
+
+  .why-card-light {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .how-step-card-light {
+    padding: 28px 20px !important;
+  }
+}
+
+/* ===========================
+   TRUST SIGNAL TICKER STRIP
+   =========================== */
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.trust-ticker-strip {
+  background: linear-gradient(90deg, #0F172A 0%, #1E293B 100%);
+  padding: 12px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.trust-ticker-inner {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: tickerScroll 30s linear infinite;
+}
+
+.trust-ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.trust-ticker-item svg {
+  color: #60A5FA;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   GALLERY SECTION
+   =========================== */
+.gallery-section-light {
+  background: #F8FAFC !important;
+  padding: 100px 0 !important;
+}
+
+/* ===========================
+   SMOOTH SCROLL LINKS
+   =========================== */
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+/* Intersection observer animation class */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
