@@ -5181,3 +5181,343 @@ a[href^="#"] {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* ==========================================================================
+   HERO SPACING FIX — Remove excess top space on mobile & desktop
+   ========================================================================== */
+
+/* Desktop: header is ~90px (top bar ~32px + nav ~58px) */
+.hero-executive-content {
+  padding-top: 100px !important;
+  padding-bottom: 48px !important;
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .hero-executive-content {
+    padding-top: 90px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .hero-luxury-badge {
+    margin-bottom: 14px !important;
+    font-size: 0.74rem !important;
+    padding: 6px 14px !important;
+  }
+
+  .hero-luxury-title {
+    font-size: clamp(1.9rem, 6vw, 2.85rem) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-luxury-subtitle {
+    font-size: 0.92rem !important;
+    margin-bottom: 18px !important;
+  }
+
+  .hero-section-executive {
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .hero-executive-content {
+    padding-top: 78px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .hero-section-executive {
+    min-height: auto !important;
+    background-attachment: scroll !important; /* Fix iOS fixed bg bug */
+  }
+
+  .hero-luxury-badge {
+    font-size: 0.7rem !important;
+    padding: 5px 12px !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 0.07em !important;
+  }
+
+  .hero-luxury-title {
+    font-size: clamp(1.7rem, 7.5vw, 2.4rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 10px !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .hero-luxury-subtitle {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Stack CTA buttons properly on mobile */
+  .hero-cta-group {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+
+  .btn-primary-blue-bold,
+  .btn-whatsapp-bold {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 13px 20px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .btn-hero-phone {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Hero quote card — full width & compact on mobile */
+  .hero-quote-card {
+    padding: 18px 14px !important;
+    border-radius: 16px !important;
+    margin-top: 16px !important;
+  }
+
+  .quote-header-title {
+    font-size: 1rem !important;
+  }
+
+  .quote-header-subtitle {
+    font-size: 0.78rem !important;
+  }
+
+  .quote-header-icon {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Feature cards grid — 2 col, compact */
+  .hero-feature-card-executive {
+    padding: 8px 10px !important;
+    gap: 8px !important;
+    border-radius: 10px !important;
+  }
+
+  .hero-feature-title-executive {
+    font-size: 0.74rem !important;
+  }
+
+  .hero-feature-sub-executive {
+    font-size: 0.64rem !important;
+  }
+
+  .feature-icon-box-executive {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    border-radius: 7px !important;
+  }
+
+  .feature-icon-box-executive svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+}
+
+/* Small mobile (iPhone SE etc.) */
+@media (max-width: 400px) {
+  .hero-executive-content {
+    padding-top: 72px !important;
+  }
+
+  .hero-luxury-title {
+    font-size: 1.6rem !important;
+  }
+
+  .hero-luxury-badge {
+    font-size: 0.65rem !important;
+    padding: 4px 10px !important;
+  }
+}
+
+/* ==========================================================================
+   STATS STRIP — MOBILE FIX
+   ========================================================================== */
+@media (max-width: 576px) {
+  .arz-stats-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+    border-radius: 16px !important;
+    margin: 24px 0 !important;
+  }
+
+  .arz-stat-item {
+    padding: 20px 12px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+  }
+
+  .arz-stat-item:nth-child(1),
+  .arz-stat-item:nth-child(2) {
+    border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+  }
+
+  .arz-stat-item:nth-child(3),
+  .arz-stat-item:nth-child(4) {
+    border-bottom: none !important;
+  }
+
+  .arz-stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.12) !important;
+  }
+
+  .arz-stat-item:nth-child(even) {
+    border-right: none !important;
+  }
+
+  .arz-stat-number {
+    font-size: 1.6rem !important;
+  }
+
+  .arz-stat-label {
+    font-size: 0.72rem !important;
+  }
+}
+
+/* ==========================================================================
+   WHY CHOOSE US — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .why-section-light {
+    padding: 60px 0 !important;
+  }
+
+  .why-card-light {
+    padding: 18px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .why-icon-light {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* ==========================================================================
+   HOW IT WORKS — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .how-section-light {
+    padding: 60px 0 !important;
+  }
+
+  .how-step-card-light {
+    padding: 28px 20px !important;
+    border-radius: 18px !important;
+  }
+
+  .how-step-number-light {
+    font-size: 3.5rem !important;
+  }
+
+  .brand-crest-light {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+
+/* ==========================================================================
+   REVIEWS — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .testimonials-section-light {
+    padding: 60px 0 !important;
+  }
+
+  .testimonial-card-light {
+    padding: 24px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  #testimonialQuote {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .testimonials-section-light::before {
+    font-size: 10rem !important;
+    opacity: 0.5;
+  }
+
+  .google-reviews-banner {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    padding: 10px 16px !important;
+    gap: 8px !important;
+  }
+}
+
+/* ==========================================================================
+   AIRPORT PRICES — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .airport-prices-section {
+    padding: 60px 0 !important;
+  }
+}
+
+/* ==========================================================================
+   CONTACT SECTION — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .contact-section-light {
+    padding: 60px 0 !important;
+  }
+}
+
+/* ==========================================================================
+   FAQ — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .faq-section-light {
+    padding: 60px 0 !important;
+  }
+}
+
+/* ==========================================================================
+   GALLERY — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .gallery-section-light {
+    padding: 60px 0 !important;
+  }
+}
+
+/* ==========================================================================
+   FOOTER — MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .footer-vip-cta-banner {
+    padding: 24px 18px !important;
+    border-radius: 18px !important;
+    flex-direction: column !important;
+  }
+
+  .footer-vip-cta-actions {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+
+  .btn-footer-call,
+  .btn-footer-whatsapp,
+  .btn-footer-book {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .footer-bottom-advanced {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+}
