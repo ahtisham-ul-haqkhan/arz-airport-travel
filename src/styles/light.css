@@ -5521,3 +5521,43 @@ a[href^="#"] {
     text-align: center !important;
   }
 }
+
+
+/* ==========================================================================
+   PHONE NUMBER — PREVENT LINE WRAP IN TOP BAR
+   ========================================================================== */
+.top-contact-link span {
+  white-space: nowrap !important;
+}
+
+.top-contact-link {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+/* ==========================================================================
+   HERO FEATURE CARDS — FORCE 2×3 GRID (2 COLS ON MOBILE, 3 ON DESKTOP)
+   ========================================================================== */
+
+/* The feature grid row — always 2 cols on mobile */
+.hero-features-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 8px !important;
+}
+
+@media (min-width: 768px) {
+  .hero-features-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+  }
+}
+
+/* Bootstrap col override — force 2-col on mobile for feature cards */
+@media (max-width: 767.98px) {
+  .hero-section-executive .row .col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+}

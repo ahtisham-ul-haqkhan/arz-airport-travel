@@ -180,9 +180,9 @@ export default function HeroSection({ onWhatsApp, showToast }) {
             </div>
 
             {/* Feature Highlights Grid (Responsive 6 Cards - Dark Glassmorphism) */}
-            <div className="row g-2 g-md-3 pt-3 border-top border-white border-opacity-15">
+            <div className="row row-cols-2 row-cols-md-3 g-2 g-md-3 pt-3 border-top border-white border-opacity-15">
               {/* 1. Personal Driver */}
-              <div className="col-6 col-md-4">
+              <div className="col">
                 <div className="hero-feature-card-executive">
                   <div className="feature-icon-box-executive">
                     <UserCheck size={19} strokeWidth={2.4} />
@@ -199,7 +199,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
               </div>
 
               {/* 2. Airport Transfers */}
-              <div className="col-6 col-md-4">
+              <div className="col">
                 <div className="hero-feature-card-executive">
                   <div className="feature-icon-box-executive">
                     <PlaneTakeoff size={19} strokeWidth={2.4} />
@@ -216,7 +216,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
               </div>
 
               {/* 3. Party Bookings */}
-              <div className="col-6 col-md-4">
+              <div className="col">
                 <div className="hero-feature-card-executive">
                   <div className="feature-icon-box-executive">
                     <Sparkles size={19} strokeWidth={2.4} />
@@ -233,7 +233,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
               </div>
 
               {/* 4. Theme Parks */}
-              <div className="col-6 col-md-4">
+              <div className="col">
                 <div className="hero-feature-card-executive">
                   <div className="feature-icon-box-executive">
                     <Ticket size={19} strokeWidth={2.4} />
@@ -250,7 +250,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
               </div>
 
               {/* 5. Train Stations */}
-              <div className="col-6 col-md-4">
+              <div className="col">
                 <div className="hero-feature-card-executive">
                   <div className="feature-icon-box-executive">
                     <Train size={19} strokeWidth={2.4} />
@@ -267,7 +267,7 @@ export default function HeroSection({ onWhatsApp, showToast }) {
               </div>
 
               {/* 6. Wheelchair Access */}
-              <div className="col-6 col-md-4">
+              <div className="col">
                 <div className="hero-feature-card-executive">
                   <div className="feature-icon-box-executive">
                     <Accessibility size={19} strokeWidth={2.4} />
