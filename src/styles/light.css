@@ -5561,3 +5561,106 @@ a[href^="#"] {
     width: 50% !important;
   }
 }
+
+
+/* ==========================================================================
+   USER FIXES:
+   1. Email shown on mobile top bar
+   2. Remove dead space between navbar & hero content
+   3. Remove golden color from 24/7 (crisp white)
+   4. Force 2-column grid for feature cards on mobile
+   ========================================================================== */
+
+/* 1. TOP CONTACT BAR MOBILE SIZING */
+@media (max-width: 575.98px) {
+  .header-top-bar {
+    font-size: 0.72rem !important;
+    padding: 3px 0 !important;
+  }
+  .top-contact-link {
+    font-size: 0.72rem !important;
+    gap: 4px !important;
+  }
+  .top-contact-link .top-icon {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .top-bar-divider {
+    opacity: 0.6;
+    margin: 0 2px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* 2. REMOVE EXCESS HERO TOP SPACE */
+.hero-section-executive {
+  padding-top: 96px !important;
+  padding-bottom: 40px !important;
+  min-height: auto !important;
+  display: block !important;
+}
+
+.hero-executive-content {
+  padding-top: 8px !important;
+  padding-bottom: 24px !important;
+}
+
+@media (max-width: 991.98px) {
+  .hero-section-executive {
+    padding-top: 90px !important;
+    padding-bottom: 30px !important;
+    min-height: auto !important;
+    display: block !important;
+  }
+  .hero-executive-content {
+    padding-top: 6px !important;
+    padding-bottom: 20px !important;
+  }
+  .hero-luxury-badge {
+    margin-top: 4px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section-executive {
+    padding-top: 86px !important;
+    padding-bottom: 20px !important;
+    min-height: auto !important;
+    display: block !important;
+  }
+  .hero-executive-content {
+    padding-top: 4px !important;
+    padding-bottom: 16px !important;
+  }
+  .hero-luxury-badge {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+/* 3. REMOVE GOLDEN COLOR FROM 24/7 & HERO BADGE */
+.hero-title-247 {
+  color: #FFFFFF !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-luxury-badge .badge-star {
+  color: #60A5FA !important;
+}
+
+/* 4. FORCE 2-COL GRID FOR FEATURE CARDS ON MOBILE */
+@media (max-width: 767.98px) {
+  .hero-section-executive .row.row-cols-2 > .col,
+  .hero-section-executive .row.row-cols-2 > div {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+  .hero-feature-card-executive {
+    padding: 8px 10px !important;
+    gap: 8px !important;
+    border-radius: 12px !important;
+  }
+}

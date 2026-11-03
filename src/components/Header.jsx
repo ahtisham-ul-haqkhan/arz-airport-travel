@@ -36,22 +36,22 @@ export default function Header({ onOpenMobileMenu }) {
       {/* Sleek Top Contact Bar (Desktop & Mobile) */}
       <div className="header-top-bar">
         <div className="container-xl d-flex align-items-center justify-content-between py-1 px-3">
-          <div className="d-flex align-items-center gap-2 gap-sm-3">
+          <div className="d-flex align-items-center justify-content-between w-100 w-md-auto gap-2 gap-sm-3">
             <a href={`tel:${CONFIG.phoneRaw}`} className="top-contact-link" title="Call ARZ Airport Travel">
               <Phone className="top-icon" size={14} />
               <span className="fw-bold" style={{ whiteSpace: 'nowrap' }}>{CONFIG.phoneNumber}</span>
             </a>
-            <span className="top-bar-divider d-none d-sm-inline">•</span>
-            <a href={`mailto:${CONFIG.email}`} className="top-contact-link d-none d-sm-flex" title="Email ARZ Airport Travel">
+            <span className="top-bar-divider">•</span>
+            <a href={`mailto:${CONFIG.email}`} className="top-contact-link" title="Email ARZ Airport Travel">
               <Mail className="top-icon" size={14} />
-              <span>{CONFIG.email}</span>
+              <span style={{ whiteSpace: 'nowrap' }}>{CONFIG.email}</span>
             </a>
           </div>
           <div className="d-none d-md-flex align-items-center gap-3 top-bar-info">
             <span>
               <MapPin className="top-icon" size={14} /> Stoke-on-Trent &amp; UK Airports
             </span>
-            <span className="top-bar-divider d-none d-sm-inline">•</span>
+            <span className="top-bar-divider">•</span>
             <span className="badge-247">
               <Clock className="top-icon" size={14} /> 24/7 Available
             </span>
