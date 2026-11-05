@@ -5571,7 +5571,19 @@ a[href^="#"] {
    4. Force 2-column grid for feature cards on mobile
    ========================================================================== */
 
-/* 1. TOP CONTACT BAR MOBILE SIZING */
+/* 1. TOP CONTACT BAR SIZING & DESKTOP/MOBILE BALANCING */
+.top-bar-contacts {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767.98px) {
+  .top-bar-contacts {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+}
+
 @media (max-width: 575.98px) {
   .header-top-bar {
     font-size: 0.68rem !important;
@@ -5593,10 +5605,10 @@ a[href^="#"] {
   }
 }
 
-/* 2. REMOVE EXCESS HERO TOP SPACE — CLEAR FIXED HEADER PERFECTLY */
+/* 2. PRECISE HERO TOP SPACE — NO OVERLAP ON DESKTOP, NO GAP ON MOBILE */
 .hero-section-executive {
-  padding-top: 122px !important;
-  padding-bottom: 40px !important;
+  padding-top: 148px !important;
+  padding-bottom: 50px !important;
   min-height: auto !important;
   display: block !important;
 }
@@ -5606,9 +5618,14 @@ a[href^="#"] {
   padding-bottom: 24px !important;
 }
 
+.hero-luxury-badge {
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+}
+
 @media (max-width: 991.98px) {
   .hero-section-executive {
-    padding-top: 116px !important;
+    padding-top: 130px !important;
     padding-bottom: 30px !important;
     min-height: auto !important;
     display: block !important;
@@ -5625,7 +5642,7 @@ a[href^="#"] {
 
 @media (max-width: 575.98px) {
   .hero-section-executive {
-    padding-top: 112px !important;
+    padding-top: 116px !important;
     padding-bottom: 20px !important;
     min-height: auto !important;
     display: block !important;

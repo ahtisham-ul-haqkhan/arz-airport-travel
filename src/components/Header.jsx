@@ -36,7 +36,7 @@ export default function Header({ onOpenMobileMenu }) {
       {/* Sleek Top Contact Bar (Desktop & Mobile) */}
       <div className="header-top-bar">
         <div className="container-xl d-flex align-items-center justify-content-between py-1 px-2 px-sm-3">
-          <div className="d-flex align-items-center justify-content-between w-100 w-md-auto gap-2 gap-sm-3">
+          <div className="d-flex align-items-center gap-2 gap-sm-3 top-bar-contacts">
             <a href={`tel:${CONFIG.phoneRaw}`} className="top-contact-link" title="Call ARZ Airport Travel">
               <Phone className="top-icon" size={14} />
               <span className="fw-bold" style={{ whiteSpace: 'nowrap' }}>{CONFIG.phoneNumber}</span>
