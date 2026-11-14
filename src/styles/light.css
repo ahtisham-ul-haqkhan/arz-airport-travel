@@ -5685,3 +5685,99 @@ a[href^="#"] {
     border-radius: 12px !important;
   }
 }
+
+
+/* ==========================================================================
+   FOOTER DEVELOPER CREDIT & MOBILE SIDE-BY-SIDE COLUMNS
+   ========================================================================== */
+.footer-developer-credit {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+}
+
+.footer-dev-link {
+  color: #60A5FA !important;
+  text-decoration: underline !important;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  word-break: break-all;
+}
+
+.footer-dev-link:hover {
+  color: #93C5FD !important;
+}
+
+.footer-dev-phone {
+  color: #E2E8F0 !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.footer-dev-phone:hover {
+  color: #60A5FA !important;
+}
+
+/* Mobile: Navigation & Airports Covered Side-by-Side (Col-6) Compact Styling */
+@media (max-width: 767.98px) {
+  .site-footer-advanced .row > .col-6 {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .footer-glass-card-advanced {
+    padding: 16px 10px !important;
+    border-radius: 14px !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .footer-glass-card-advanced h4 {
+    font-size: 0.86rem !important;
+    margin-bottom: 10px !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .footer-heading-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .footer-link-pill-list {
+    gap: 5px !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .footer-link-pill-list a {
+    font-size: 0.74rem !important;
+    padding: 4px 6px !important;
+    gap: 4px !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .footer-link-pill-list a svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .footer-airport-pills-grid {
+    gap: 5px !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .airport-pill {
+    font-size: 0.72rem !important;
+    padding: 4px 6px !important;
+    gap: 4px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .site-footer-advanced .row > .col-6 .airport-pill svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .footer-developer-credit {
+    font-size: 0.74rem !important;
+    margin-top: 8px !important;
+  }
+}

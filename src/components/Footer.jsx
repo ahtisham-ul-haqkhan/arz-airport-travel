@@ -110,7 +110,7 @@ export default function Footer({ onWhatsApp, onOpenPrivacy, onOpenTerms }) {
           </div>
 
           {/* Col 2: Navigation Links */}
-          <div className="col-lg-2 col-sm-6">
+          <div className="col-6 col-lg-2">
             <div className="footer-glass-card-advanced h-100">
               <h4>
                 <Compass className="footer-heading-icon" />
@@ -152,7 +152,7 @@ export default function Footer({ onWhatsApp, onOpenPrivacy, onOpenTerms }) {
           </div>
 
           {/* Col 3: UK Airports Covered */}
-          <div className="col-lg-3 col-sm-6">
+          <div className="col-6 col-lg-3">
             <div className="footer-glass-card-advanced h-100">
               <h4>
                 <PlaneTakeoff className="footer-heading-icon" />
@@ -260,6 +260,24 @@ export default function Footer({ onWhatsApp, onOpenPrivacy, onOpenTerms }) {
           <div className="footer-copyright">
             &copy; <span id="currentYear">{year}</span> <strong>ARZ Airport Travel</strong>. All rights reserved. Licensed
             by Stoke-on-Trent City Council Private Hire Operator &bull; Fully Insured with Public Liability.
+            <div className="footer-developer-credit mt-2">
+              Designed &amp; Developed by{' '}
+              <a
+                href="https://ahtishamdev.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-dev-link"
+              >
+                https://ahtishamdev.netlify.app/
+              </a>{' '}
+              <span className="dot-sep">&bull;</span>{' '}
+              <a
+                href="tel:+923151252016"
+                className="footer-dev-phone"
+              >
+                +92 315 1252016
+              </a>
+            </div>
           </div>
           <div className="footer-bottom-links">
             <button
